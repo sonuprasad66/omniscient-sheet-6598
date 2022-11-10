@@ -7,6 +7,12 @@ ProductRouter.get("/alldata", async (req, res) => {
   res.send({ data: data, message: "request successfull" });
 });
 
+ProductRouter.get("/alldata/:id", async (req, res) => {
+  const { id } = req.params;
+  let data = await ProductModel.findOne({ id });
+  res.send({ data: data, message: "request successfull" });
+});
+
 module.exports = {
   ProductRouter,
 };
