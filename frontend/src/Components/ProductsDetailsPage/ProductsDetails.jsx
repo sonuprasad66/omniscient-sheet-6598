@@ -1,6 +1,6 @@
 import React from "react";
-
 import "./propductDel.css"
+
 const ProductDetails = () => {
 
 const addData=() =>{
@@ -26,17 +26,40 @@ const addData=() =>{
         <h1> Tata 1mg Women's Multivitamin, Zinc, Vitamin C, Calcium, Vitamin D, and Iron Immunity Booster Tablet</h1>
         
 
-        <div style={{margin:"10px",fontSize:"12px",lineHeight:"17px",color:"#ff6f61"}}>
-        TATA img
+        <div style={{margin:"10px",fontSize:"20px",lineHeight:"17px",color:"#ff6f61"}}>
+        Tata 1mg Healthcare Solutions Private Limited
         </div>
           <div 
           className="rating"
           style={{ flexDirection:"row",alignItems:"center",borderRadius:"2x",bagroundColor:"#1aab2a",fontWeight:"bold",fontSize:"19px", margin:"10px"}}>
           3.5
         </div>
-        <p style={{marginLeft:"50px" ,fontSize:"18px", marginTop:"-38px"}}>
+        <p style={{marginLeft:"50px" ,fontSize:"18px", marginTop:"-38px",color:"#ff6f61"}}>
         1023 Ratings & 185 Reviews
         </p> 
+        <div style={{margin:"10px",fontSize:"15px",lineHeight:"17px",color:"#ff6f61"}}>
+       <img  style={{width:"70px",height:"70"}}
+        src="https://onemg.gumlet.io/marketing/qubet60eokwth4ki5btj.png" />
+        <p  style={{marginTop:"-50px",fontSize:"20px",lineHeight:"17px",color:"#ff6f61",marginLeft:"100px"}}>
+        Tata 1mg Healthcare Solutions Private Limited
+        </p>
+        </div>
+        <div style={{marginTop:"50px",fontSize:"20px",marginLeft:"10px"}}>
+        <h3>Pack Size (2)</h3>
+        <div style={{fontSize:"20px",marginLeft:"10px",display:"flex",gap:"20px"}}>
+          
+          <div className="bottel">
+            <p>30 teblets</p>
+            <p>₹225</p>
+          </div>
+          <div className="bottel">
+            <p>30 teblets</p>
+            <p>₹415</p>
+          </div>
+          </div>
+        </div>
+
+        <div style={{marginTop:"30px"}}>
         <h4>Product highlights</h4>
         <ul>
           <li>Supports bone, skin and eye health </li>
@@ -47,12 +70,10 @@ const addData=() =>{
           <li>Improves energy levels and supports brain health </li>
           <li>A concoction of multi-vitamins, essential minerals, a women</li>
           <li>centric health blend, and pre and pro-biotics complex</li>
-          
-
         </ul>
-
+        </div>
       </div>
-      
+      <div className="produ">
       <div className='productcard'>
         <div className="div1" style={{marginLeft:"10px", width:"100%",height:"40px",alignItems:"center",borderTopLeftRadius:"10px",borderTopRightRadius:"10px"}}>   
       <img style={{marginLeft:"10px",width:"20px",height:"20px"}}   src="https://www.1mg.com/images/social_cue.svg"/>
@@ -89,7 +110,7 @@ free shipping and 5% Extra cashback
       <div  style={{margin:"30px",fontSize:"20px", scrollbarColor:"5"}}>
         <label>Inclusive of all taxes</label>
         <br/>
-        <select className="menu">
+        <select>
                  <option value="1">1 Bottel</option>
                 <option value="2">2 Bottels</option>
                 <option value="3">3 Bottels</option>
@@ -108,11 +129,22 @@ free shipping and 5% Extra cashback
         <button className="btn1" type="submit" onClick={addData}>ADD TO CART</button>
       </div>
             </form>
-
-        
-
       </div>
-      
+        <div className="dates1">
+          <p>Earliest delivery by 5pm, Tomorrow</p>
+          <p>Delivering to:110020, New Delhi</p>
+        </div>
+      <div style={{marginTop:"20px"}}>
+        <img style={{width:"700px"}}
+        src="https://onemg.gumlet.io/58aeea63-bdc4-48ce-be10-0f5d31a99dfe_1667671530.jpg?w=410&h=94&format=auto" />
+      </div>
+      <div className="offer"> 
+      <p>
+      Amazon Pay: Pay with Amazon Pay and win up to ₹500 cashback.<br/>
+       Valid only on minimum order value of ₹399. Valid till<br/>
+        30th November 2022.</p>
+      </div>
+      </div>
       </div>
     </div>
   )
