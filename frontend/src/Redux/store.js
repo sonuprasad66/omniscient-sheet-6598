@@ -3,8 +3,13 @@
 import { applyMiddleware, legacy_createStore, combineReducers } from "redux";
 import thunk from "redux-thunk";
 import { reducer as ProductReducer } from "./Product/reducer";
+import { reducer as CartReducer } from "./Cart/reducer";
+
+
+const reducer = combineReducers({ ProductReducer, CartReducer });
 
 const rootReducer = combineReducers({ ProductReducer });
+
 
 export const store = legacy_createStore(rootReducer, applyMiddleware(thunk));
 
