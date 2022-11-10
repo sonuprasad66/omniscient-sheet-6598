@@ -55,7 +55,7 @@ margin: auto;
 }
 .productcard{
     /* border: 1px solid rgb(36, 21, 145); */
-    width: 500px;
+    /* width: 500px; */
     margin: auto;
     margin: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -67,12 +67,19 @@ margin: auto;
     width: 70%;
 
 }
+
 .btn{
     margin: 10px;
     font-size: 25px;
     margin-top: 60px;
     text-align: center;
-    background-color: #ff6f61;
+    background-color: #ee4a3c;
+    height: 60px;
+    font-weight: bold;
+    color: white;
+}
+.btn1{
+    margin-top: 10px;
 }
 .div1{
     background-color: #edf9ee;
