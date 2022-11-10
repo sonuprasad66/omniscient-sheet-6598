@@ -1,16 +1,15 @@
 #product {
-    
+
     width: 100%;
-
-
     margin-top: 100px;
     margin-bottom: 100px;
+
 }
 .productdel{
     display: flex;
     gap: 20px;
     /* border:  1px solid rgb(177, 47, 47); */
-    width: 80%;
+    width: 90%;
 margin: auto;
 }
 .productimg{
@@ -20,7 +19,7 @@ margin: auto;
 }
 .productimg img {
     width: 70px;
-    height: 50px;
+    height: 70px;
     margin: 10px;
     /* border: 1px solid black; */
 }
@@ -29,14 +28,26 @@ margin: auto;
     
 }
 .producttop img {
-    width: 300;
-    height: 350px;
+    width: 500px;
+    height: 500px;
+    
 }
-
+.bottel{
+    border: 1px solid black;
+    height: 100px;
+    width: 200px;
+    text-align: center;
+    margin: 10px;
+    background-color: beige;
+}
+.bottel :hover{
+    background-color: bisque;
+}
 .productheding{
     /* border: 1px solid rgb(145, 21, 21); */
-    width: 800px;
-    margin: auto;
+    
+    /* margin: auto; */
+    width: 700px;
     
 }
 .productheding h1{
@@ -56,16 +67,37 @@ margin: auto;
 .productcard{
     /* border: 1px solid rgb(36, 21, 145); */
     /* width: 500px; */
-    margin: auto;
+    /* margin: auto; */
     margin: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 5%;
+    height: 450px;
 }
 .images img{
     margin: 20px;
     height: 170px;
     width: 70%;
 
+}
+.dates1{
+    height: 150px;
+    font-size: 25px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px;
+}
+.dates1 p {
+    margin-left: 10px;
+    margin-top: 20px;
+}
+.offer{
+    margin-top: 20px;
+    height: 170px;
+    border: 1px dotted;
+}
+.offer p{
+    margin-top: 20px;
+    font-size: 20px;
+    text-align:initial;
 }
 
 .btn{
