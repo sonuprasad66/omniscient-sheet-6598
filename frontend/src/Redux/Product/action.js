@@ -1,5 +1,3 @@
-//Write the action creator functions here
-
 import axios from "axios";
 import * as types from "./actionTypes";
 
