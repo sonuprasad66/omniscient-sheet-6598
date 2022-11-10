@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main_container {
+  width: 100%;
+  border: 1px solid black;
+  padding: 0px 30px;
+  display: flex;
+  gap: 2%;
+}
+
+.sidebar {
+  width: 200px;
+  border: 1px solid red;
+}
+
+.product {
+  width: 80%;
+  border: 1px solid red;
+}
+
+/* ========================ProductCart======================================= */
+
+.productCart_container {
+  border: 1px solid red;
+  padding: 10px;
+}
+.product_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.product_image img {
+  height: 150px;
+  width: 100px;
+}
