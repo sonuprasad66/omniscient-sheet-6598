@@ -6,7 +6,6 @@
 
 .main_container {
   width: 100%;
-  height: 500px;
   border: 1px solid black;
   padding: 0px 30px;
   display: flex;
@@ -15,12 +14,27 @@
 
 .sidebar {
   width: 200px;
-  height: 100%;
   border: 1px solid red;
 }
 
 .product {
   width: 80%;
-  height: 100%;
   border: 1px solid red;
+}
+
+/* ========================ProductCart======================================= */
+
+.productCart_container {
+  border: 1px solid red;
+  padding: 10px;
+}
+.product_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.product_image img {
+  height: 150px;
+  width: 100px;
 }
