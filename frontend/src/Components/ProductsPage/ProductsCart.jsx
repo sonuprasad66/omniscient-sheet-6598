@@ -2,6 +2,7 @@ import { Flex } from "@chakra-ui/react";
 import React from "react";
 import "./Products.css";
 import { ImStarEmpty } from "react-icons/im";
+import { FaCartPlus } from "react-icons/fa";
 
 export const ProductsCart = ({ product }) => {
   console.log(product);
@@ -15,26 +16,25 @@ export const ProductsCart = ({ product }) => {
         <div
           className="product_header"
           style={{
-            border: "1px solid red",
             height: "50px",
             width: "100%",
             overflow: "hidden",
           }}
         >
-          <h3 style={{ color: "#212121", fontSize: "14px" }}>
+          <h3 style={{ color: "#213253", fontSize: "14px" }}>
             {product.productName}
           </h3>
         </div>
         <div
           className="product_quantity"
-          style={{ border: "1px solid red", width: "100%" }}
+          style={{ width: "100%", padding: "0 0 5px 0" }}
         >
           <p style={{ color: "#757575", fontSize: "12px" }}>
             {product.shortDesc}
           </p>
         </div>
         <div className="product_rating">
-          <Flex gap={2} style={{ border: "1px solid red", width: "100%" }}>
+          <Flex gap={2}>
             <div
               style={{
                 background: "#1AAB2A",
@@ -42,7 +42,7 @@ export const ProductsCart = ({ product }) => {
                 borderRadius: "2px",
               }}
             >
-              <Flex gap={1} style={{ fontWeight: "800" }}>
+              <Flex gap={1} ptb={1} style={{ fontWeight: "800" }}>
                 <p style={{ color: "#FFFFFF", fontSize: "12px" }}>
                   {product.ratings}
                 </p>
@@ -56,16 +56,34 @@ export const ProductsCart = ({ product }) => {
             </p>
           </Flex>
 
-          <Flex gap={2} style={{ border: "1px solid red", width: "100%" }}>
-            <div>MRP ₹{product.strikedPrice}</div>
-            <p>{product.discount}% OFF</p>
+          <Flex
+            gap={2}
+            style={{
+              fontSize: "12px",
+              fontWeight: "600",
+            }}
+          >
+            <div style={{ color: "#858585 " }}>
+              MRP{"  "}
+              <span style={{ textDecoration: "line-through" }}>
+                ₹{product.strikedPrice}
+              </span>
+            </div>
+            <div style={{ color: "#1AAB2A" }}>{product.discount}% OFF</div>
           </Flex>
           <Flex
             justifyContent={"space-between"}
-            style={{ border: "1px solid red", width: "100%" }}
+            style={{
+              // border: "1px solid red",
+              width: "100%",
+              fontWeight: "600",
+            }}
           >
             <h2>₹{product.price}</h2>
-            <h2>ADD</h2>
+            <Flex gap={1} alignItems="center" className="add_btn">
+              <FaCartPlus />
+              ADD
+            </Flex>
           </Flex>
         </div>
       </div>
