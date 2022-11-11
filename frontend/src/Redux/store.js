@@ -5,11 +5,9 @@ import thunk from "redux-thunk";
 import { reducer as ProductReducer } from "./Product/reducer";
 import { reducer as CartReducer } from "./Cart/reducer";
 
+const rootReducer = combineReducers({ ProductReducer, CartReducer });
 
-const reducer = combineReducers({ ProductReducer, CartReducer });
-
-const rootReducer = combineReducers({ ProductReducer });
-
+// const rootReducer = combineReducers({ ProductReducer });
 
 export const store = legacy_createStore(rootReducer, applyMiddleware(thunk));
 

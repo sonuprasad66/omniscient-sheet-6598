@@ -5,16 +5,28 @@ import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../Redux/Product/action";
 import { ProductsCart } from "./ProductsCart";
 import { Flex, SimpleGrid } from "@chakra-ui/react";
+import { useLocation } from "react-router";
+import { useSearchParams } from "react-router-dom";
 
 export const Products = () => {
+  const [searchParams] = useSearchParams();
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.ProductReducer.products);
+  const location = useLocation();
+  const { data } = useSelector((state) => state.ProductReducer.products);
 
   useEffect(() => {
-    dispatch(getProducts());
-  }, []);
+    if (location || data.length == 0) {
+      let getProductsParams = {
+        params: {
+          brand: searchParams.getAll("brand"),
+        },
+      };
+      console.log(getProductsParams);
+      dispatch(getProducts(getProductsParams));
+    }
+  }, [location.search]);
 
-  // console.log(products.data);
+  // console.log(data);
 
   return (
     <div className="main_container">
@@ -42,7 +54,7 @@ export const Products = () => {
           </Flex>
         </div>
         <SimpleGrid columns={[1, 2, 3, 4]} spacing="20px">
-          {products.data?.map((item) => {
+          {data?.map((item) => {
             return <ProductsCart key={item._id} product={item} />;
           })}
         </SimpleGrid>

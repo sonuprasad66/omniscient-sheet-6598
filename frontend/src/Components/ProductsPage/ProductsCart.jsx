@@ -5,7 +5,7 @@ import { ImStarEmpty } from "react-icons/im";
 import { FaCartPlus } from "react-icons/fa";
 
 export const ProductsCart = ({ product }) => {
-  console.log(product);
+  // console.log(product);
   return (
     <div className="productCart_container">
       <div className="product_image">
