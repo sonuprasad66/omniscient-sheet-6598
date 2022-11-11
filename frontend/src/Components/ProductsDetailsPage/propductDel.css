@@ -9,7 +9,8 @@
     display: flex;
     gap: 20px;
     /* border:  1px solid rgb(177, 47, 47); */
-    width: 90%;
+    
+    width: 80%;
 margin: auto;
 }
 .productimg{
@@ -19,7 +20,7 @@ margin: auto;
 }
 .productimg img {
     width: 70px;
-    height: 70px;
+    height: 60px;
     margin: 10px;
     /* border: 1px solid black; */
 }
@@ -28,14 +29,14 @@ margin: auto;
     
 }
 .producttop img {
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 450px;
     
 }
 .bottel{
     border: 1px solid black;
-    height: 100px;
-    width: 200px;
+    height: 80px;
+    width: 150px;
     text-align: center;
     margin: 10px;
     background-color: beige;
@@ -69,6 +70,8 @@ margin: auto;
     /* width: 500px; */
     margin: auto;
     /* margin: 10px; */
+    /* height: 480px; */
+
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 5%;
     margin-bottom: 20px;
@@ -81,9 +84,12 @@ margin: auto;
 }
 .dates1{
     /* height: 120px; */
-    font-size: 15px;
+    font-size: 20px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 20px;
+}
+.contain{
+    color: blue;
 }
 .dates1 p {
     margin-left: 10px;
