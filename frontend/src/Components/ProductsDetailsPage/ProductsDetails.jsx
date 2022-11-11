@@ -26,7 +26,7 @@ const addData=() =>{
         <h1> Tata 1mg Women's Multivitamin, Zinc, Vitamin C, Calcium, Vitamin D, and Iron Immunity Booster Tablet</h1>
         
 
-        <div style={{margin:"10px",fontSize:"20px",lineHeight:"17px",color:"#ff6f61"}}>
+        <div style={{margin:"10px",fontSize:"15px",lineHeight:"17px",color:"#ff6f61"}}>
         Tata 1mg Healthcare Solutions Private Limited
         </div>
           <div 
@@ -34,13 +34,13 @@ const addData=() =>{
           style={{ flexDirection:"row",alignItems:"center",borderRadius:"2x",bagroundColor:"#1aab2a",fontWeight:"bold",fontSize:"19px", margin:"10px"}}>
           3.5
         </div>
-        <p style={{marginLeft:"50px" ,fontSize:"18px", marginTop:"-38px",color:"#ff6f61"}}>
+        <p style={{marginLeft:"50px" ,fontSize:"15px", marginTop:"-38px",color:"#ff6f61"}}>
         1023 Ratings & 185 Reviews
         </p> 
         <div style={{margin:"10px",fontSize:"15px",lineHeight:"17px",color:"#ff6f61"}}>
-       <img  style={{width:"50px",height:"50"}}
+       <img  style={{width:"30px",height:"30"}}
         src="https://onemg.gumlet.io/marketing/qubet60eokwth4ki5btj.png" />
-        <p  style={{marginTop:"-40px",fontSize:"20px",lineHeight:"17px",color:"#ff6f61",marginLeft:"60px"}}>
+        <p  style={{marginTop:"-25px",fontSize:"15px",lineHeight:"17px",color:"#ff6f61",marginLeft:"40px"}}>
         Tata 1mg Healthcare Solutions Private Limited
         </p>
         </div>
