@@ -1,19 +1,18 @@
 .container {
-  border: 1px solid red;
   width: 80%;
   margin: 2rem 0rem;
   margin: auto;
   height: auto;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 .left-container {
-  border: 1px solid blue;
   height: auto;
   width: 59%;
 }
 .right-container {
-  border: 1px solid tomato;
   /* height: 20rem; */
   width: 39%;
 }
@@ -220,4 +219,61 @@
   color: white;
   font-weight: 600;
   margin-top: 10px;
+}
+.remove-div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.remove-div > img {
+  margin-right: 8px;
+}
+.remove-div > p,
+.quantity-div > p {
+  font-size: 12px;
+}
+.quantity-div {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 4px;
+}
+.quantity-div > img:hover {
+  cursor: pointer;
+}
+.summaryItem{
+  margin-bottom: 1.5rem;
+  color: black;
+}
+.summ-arrive{
+  background-color: #fef7fe;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.summ-arrive>h6{
+  font-size: 14px;
+  color: #333333;
+  font-weight: 700;
+}
+.summ-arrive>p{
+  font-size: 12px;
+  color: #a9a9a9;
+}
+.address-change{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.address-change>p{
+  color: #ff6f61;
+  font-weight: 700;
+}
+.add-div>h5, .add-div>h6{
+  font-size: 12px;
+  color: #333333;
+}
+.fw-700{
+  font-weight: 700;
 }

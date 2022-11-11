@@ -1,0 +1,31 @@
+.address-container {
+  margin: 2rem 0rem;
+  margin-left: 10rem;
+  width: 50%;
+  height: auto;
+}
+.body {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  padding: 0.8rem;
+  margin: 0.5rem 0rem 4rem;
+}
+.address-container hr {
+  margin-bottom: 1rem;
+  color: black;
+}
+.terms {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+.terms > p {
+  font-size: 10px;
+  color: #757575;
+  width: 18rem;
+  font-weight: 400;
+}
+.terms span {
+  color: #ff6f61;
+}
