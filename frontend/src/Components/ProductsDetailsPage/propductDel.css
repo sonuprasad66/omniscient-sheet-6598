@@ -10,7 +10,7 @@
     gap: 20px;
     /* border:  1px solid rgb(177, 47, 47); */
     
-    width: 80%;
+    width: 90%;
 margin: auto;
 }
 .productimg{
@@ -20,7 +20,7 @@ margin: auto;
 }
 .productimg img {
     width: 70px;
-    height: 60px;
+    height: 50px;
     margin: 10px;
     /* border: 1px solid black; */
 }
@@ -29,8 +29,8 @@ margin: auto;
     
 }
 .producttop img {
-    width: 400px;
-    height: 450px;
+    width: 300px;
+    height: 400px;
     
 }
 .bottel{
@@ -52,7 +52,7 @@ margin: auto;
     
 }
 .productheding h1{
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
     margin: 10px;
 }
