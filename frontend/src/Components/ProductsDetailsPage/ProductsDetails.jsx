@@ -131,8 +131,8 @@ free shipping and 5% Extra cashback
             </form>
       </div>
         <div className="dates1">
-          <p>Earliest delivery by 5pm, Tomorrow</p>
-          <p>Delivering to:110020, New Delhi</p>
+          <p> <span>Earliest delivery by</span> <span className="contain"> 5pm, Tomorrow</span> </p>
+          <p>Delivering to: <span> 110020, New Delhi </span></p>
         </div>
       <div style={{marginTop:"20px"}}>
         <img style={{width:"700px"}}
