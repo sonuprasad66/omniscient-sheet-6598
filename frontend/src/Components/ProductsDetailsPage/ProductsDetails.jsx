@@ -38,9 +38,9 @@ const addData=() =>{
         1023 Ratings & 185 Reviews
         </p> 
         <div style={{margin:"10px",fontSize:"15px",lineHeight:"17px",color:"#ff6f61"}}>
-       <img  style={{width:"70px",height:"70"}}
+       <img  style={{width:"50px",height:"50"}}
         src="https://onemg.gumlet.io/marketing/qubet60eokwth4ki5btj.png" />
-        <p  style={{marginTop:"-50px",fontSize:"20px",lineHeight:"17px",color:"#ff6f61",marginLeft:"100px"}}>
+        <p  style={{marginTop:"-40px",fontSize:"20px",lineHeight:"17px",color:"#ff6f61",marginLeft:"60px"}}>
         Tata 1mg Healthcare Solutions Private Limited
         </p>
         </div>
@@ -102,12 +102,12 @@ const addData=() =>{
         </label>
         <img style={{ fontWeight:"500",color:"#42ba4f",fontSize:"16px",marginTop:"-25px",marginLeft:"133px"}}
         src="https://res.cloudinary.com/du8msdgbj/image/upload/v1613645053/marketing/phb2bz61etrdmuurfdoq.png" alt="" />
-        <p style={{ fontWeight:"400",fontSize:"16px",marginTop:"-25px",marginLeft:"230px"}} >
+        <p style={{ fontWeight:"400",fontSize:"14px",marginTop:"-25px",marginLeft:"230px"}} >
         member price
 free shipping and 5% Extra cashback
         </p>
       </div>
-      <div  style={{margin:"30px",fontSize:"20px", scrollbarColor:"5"}}>
+      <div  style={{margin:"20px",fontSize:"20px", scrollbarColor:"5"}}>
         <label>Inclusive of all taxes</label>
         <br/>
         <select>
@@ -140,7 +140,7 @@ free shipping and 5% Extra cashback
       </div>
       <div className="offer"> 
       <p>
-      Amazon Pay: Pay with Amazon Pay and win up to ₹500 cashback.<br/>
+      <span>Amazon Pay :</span> Pay with Amazon Pay and win up to ₹500 cashback.<br/>
        Valid only on minimum order value of ₹399. Valid till<br/>
         30th November 2022.</p>
       </div>
