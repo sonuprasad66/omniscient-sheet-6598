@@ -14,13 +14,24 @@ export const Cart = () => {
       quantity: 1,
     },
   ]);
+
+  const handleChange = (change) => {
+    let temp = Number(items.quantity);
+    temp = temp + change;
+    console.log(change, "temp is ", temp);
+    // setItems({
+    //   ...items,
+    //   quantity: quantity + change,
+    // });
+  };
+
   return (
     <div className={"container"}>
       <div className="left-container">
         <p>Items NOT Requiring Prescription</p>
         <div>
           {items.map((item) => {
-            return <Item {...item} />;
+            return <Item {...item} handleChange={handleChange} />;
           })}
         </div>
         <p>Deals from Dettol</p>
