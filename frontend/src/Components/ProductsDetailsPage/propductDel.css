@@ -19,8 +19,8 @@ margin: auto;
     
 }
 .productimg img {
-    width: 70px;
-    height: 50px;
+    width: 60px;
+    height: 40px;
     margin: 10px;
     /* border: 1px solid black; */
 }
@@ -30,13 +30,13 @@ margin: auto;
 }
 .producttop img {
     width: 300px;
-    height: 400px;
+    height: 350px;
     
 }
 .bottel{
     border: 1px solid black;
-    height: 80px;
-    width: 150px;
+    
+    width: 100px;
     text-align: center;
     margin: 10px;
     background-color: beige;
@@ -57,12 +57,12 @@ margin: auto;
     margin: 10px;
 }
 .productheding h4{
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
     margin: 10px;
 }
 .productheding ul{
-    font-size: 20px;
+    font-size: 15px;
     margin-left: 25px;
 }
 .productcard{
@@ -84,7 +84,7 @@ margin: auto;
 }
 .dates1{
     /* height: 120px; */
-    font-size: 20px;
+    font-size: 15px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 20px;
 }
@@ -96,13 +96,14 @@ margin: auto;
     margin-top: 20px;
 }
 .offer{
+    font-size: 15px;
     margin-top: 20px;
-    height: 170px;
+    height: 120px;
     border: 1px dotted;
 }
 .offer p{
     margin-top: 20px;
-    font-size: 20px;
+    font-size: 15px;
     text-align:initial;
 }
 
