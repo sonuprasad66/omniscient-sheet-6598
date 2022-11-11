@@ -68,11 +68,11 @@ export const Sidebar = () => {
           <div>
             <input
               type="checkbox"
-              value="Mom and World"
-              checked={brand.includes("Mom and World")}
+              value="Mom & World"
+              checked={brand.includes("Mom & World")}
               onChange={handleFilterCheckbox}
             />
-            <label>Mom and World</label>
+            <label>Mom & World</label>
           </div>
           <h4>10</h4>
         </Flex>
