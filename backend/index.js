@@ -20,7 +20,6 @@ app.use("/", ProductRouter);
 app.use("/cart", cartRouter);
 app.use("/", ProductDetailsRouter);
 
-
 app.listen(PORT, async () => {
   try {
     await connection;

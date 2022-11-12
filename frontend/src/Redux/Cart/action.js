@@ -45,7 +45,7 @@ export const addCart = (id) => (dispatch) => {
   dispatch({ type: types.ADD_CART_REQUEST });
   return axios
     .post(`http://localhost:8080/cart/add`, {
-      _id: id,
+      id,
     })
     .then((res) => {
       return dispatch({ type: types.ADD_CART_SUCCESS, payload: res.res });
