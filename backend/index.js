@@ -11,6 +11,7 @@ const { ProductRouter } = require("./Routes/Products.route");
 
 app.get("/", (req, res) => {
   res.send({ msg: "Main home Page" });
+  
 });
 
 app.use("/", userRouter);
