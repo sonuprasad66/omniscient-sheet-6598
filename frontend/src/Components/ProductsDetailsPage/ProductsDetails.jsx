@@ -1,9 +1,31 @@
 import React from "react";
 import "./propductDel.css"
+import {useParams} from "react-router-dom"
+import { getProductsdetails } from "../../Redux/ProductDetails/action";
+import {useDispatch,useSelector} from "react-redux"
+import { useEffect } from "react";
+
 
 const ProductDetails = () => {
 
-const addData=() =>{
+const dispatch=useDispatch()
+
+const {id}=useParams()
+
+useEffect(() => {
+   
+    dispatch(getProductsdetails(id))
+    
+},[getProductsdetails,dispatch,id])
+
+const {data} =useSelector((state) => state.DetailsReducer.products)
+
+// console.log(data)
+
+
+// console.log(id)
+const hendelADDToCart=() =>{
+
 
 }
 
@@ -21,11 +43,12 @@ const addData=() =>{
       <div className='producttop'>   
       <img src="https://onemg.gumlet.io/images/q_auto,h_150,w_150,c_fit,f_auto/qh1au45w8u7cfvf3lg3i/tata-1mg-women-s-multivitamin-zinc-vitamin-c-calcium-vitamin-d-and-iron-immunity-booster-tablet.jpg" />
       
+       {/* <img src={data.imageUrl}  /> */}
       </div>
       <div className='productheding'>
         <h1> Tata 1mg Women's Multivitamin, Zinc, Vitamin C, Calcium, Vitamin D, and Iron Immunity Booster Tablet</h1>
         
-
+          
         <div style={{margin:"10px",fontSize:"15px",lineHeight:"17px",color:"#ff6f61"}}>
         Tata 1mg Healthcare Solutions Private Limited
         </div>
@@ -33,8 +56,9 @@ const addData=() =>{
           className="rating"
           style={{ flexDirection:"row",alignItems:"center",borderRadius:"2x",bagroundColor:"#1aab2a",fontWeight:"bold",fontSize:"19px", margin:"10px"}}>
           3.5
+          {/* {data.ratings} */}
         </div>
-        <p style={{marginLeft:"50px" ,fontSize:"15px", marginTop:"-38px",color:"#ff6f61"}}>
+        <p style={{marginLeft:"80px" ,fontSize:"15px", marginTop:"-38px",color:"#ff6f61"}}>
         1023 Ratings & 185 Reviews
         </p> 
         <div style={{margin:"10px",fontSize:"15px",lineHeight:"17px",color:"#ff6f61"}}>
@@ -75,9 +99,11 @@ const addData=() =>{
       </div>
       <div className="produ">
       <div className='productcard'>
-        <div className="div1" style={{marginLeft:"10px", width:"100%",height:"40px",alignItems:"center",borderTopLeftRadius:"10px",borderTopRightRadius:"10px"}}>   
-      <img style={{marginLeft:"10px",width:"20px",height:"20px"}}   src="https://www.1mg.com/images/social_cue.svg"/>
-       <p style={{fontWeight:"400px",fontSize:"15px",lineHeight:"17px" ,marginLeft:"50px",marginTop:"-10px"}} >
+        <div className="div1" style={{ width:"100%",height:"30px",alignItems:"center",borderTopLeftRadius:"10px",borderTopRightRadius:"10px"}}>   
+      <img style={{width:"20px",height:"20px"}}  
+      
+       src="https://www.1mg.com/images/social_cue.svg"/>
+       <p style={{fontSize:"10px",lineHeight:"17px" ,marginLeft:"50px",marginTop:"-10px"}} >
                 385 people bought this recently
               </p>
               </div>
@@ -126,7 +152,7 @@ free shipping and 5% Extra cashback
         </select>&nbsp;&nbsp;  of 60 bottels
       </div>
       <div className="btn">
-        <button className="btn1" type="submit" onClick={addData}>ADD TO CART</button>
+        <button className="btn1" type="submit" onClick={() => hendelADDToCart()}>ADD TO CART</button>
       </div>
             </form>
       </div>

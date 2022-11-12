@@ -75,6 +75,11 @@ margin: auto;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 5%;
     margin-bottom: 20px;
+    /* padding-top: 5px; */
+    padding-bottom: 10px;
+}
+.produ{
+    margin-top: 20px;
 }
 .images img{
     margin: 20px;
@@ -130,7 +135,12 @@ margin: auto;
     background-color: #edf9ee;
 }
 .rating{
-    color: #1aab2a;
+    background-color: #1aab2a;
+    color: white;
+    height: 30px;
+    width: 60px;
+    /* border: 1px solid black; */
+    margin-left: 20px;
 }
 span{
     font-weight: bold;
