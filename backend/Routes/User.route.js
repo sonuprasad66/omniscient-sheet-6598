@@ -6,7 +6,7 @@ var jwt = require("jsonwebtoken");
 require("dotenv").config();
 
 userRouter.post("/signup", async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password,number } = req.body;
   const user = await userModel.findOne({ email });
 
   if (user) {
@@ -17,6 +17,7 @@ userRouter.post("/signup", async (req, res) => {
         res.send({ msg: "SignupUp faild" });
       } else {
         const new_user = new userModel({
+          phoneNo:number,
           email: email,
           password: hash_password,
         });

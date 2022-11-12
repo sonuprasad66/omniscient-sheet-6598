@@ -19,6 +19,7 @@ export const Products = () => {
       let getProductsParams = {
         params: {
           brand: searchParams.getAll("brand"),
+          discount: searchParams.getAll("discount"),
         },
       };
       console.log(getProductsParams);
