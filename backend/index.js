@@ -8,14 +8,15 @@ const PORT = process.env.PORT || 8000;
 const { connection } = require("./Config/db");
 const { userRouter } = require("./Routes/User.route");
 const { ProductRouter } = require("./Routes/Products.route");
+const { ProductDetailsRouter } = require("./Routes/Details.router");
 
 app.get("/", (req, res) => {
   res.send({ msg: "Main home Page" });
-  
 });
 
 app.use("/", userRouter);
 app.use("/", ProductRouter);
+app.use("/", ProductDetailsRouter);
 
 app.listen(PORT, async () => {
   try {

@@ -5,9 +5,19 @@ import { ImStarEmpty } from "react-icons/im";
 import { FaCartPlus } from "react-icons/fa";
 
 export const ProductsCart = ({ product }) => {
-  // console.log(product);
+  const handleAddToCart = (id) => {
+    console.log(id);
+  };
+
+  const handleDetails = (id) => {
+    console.log(id);
+  };
+
   return (
-    <div className="productCart_container">
+    <div
+      className="productCart_container"
+      onClick={() => handleDetails(product._id)}
+    >
       <div className="product_image">
         <img src={product.imageUrl} alt="product" />
       </div>
@@ -80,7 +90,12 @@ export const ProductsCart = ({ product }) => {
             }}
           >
             <h2>₹{product.price}</h2>
-            <Flex gap={1} alignItems="center" className="add_btn">
+            <Flex
+              gap={1}
+              alignItems="center"
+              className="add_btn"
+              onClick={() => handleAddToCart(product._id)}
+            >
               <FaCartPlus />
               ADD
             </Flex>
