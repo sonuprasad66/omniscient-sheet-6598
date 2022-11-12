@@ -70,5 +70,10 @@
   color: #ffffff;
   background: #ff6f61;
   cursor: pointer;
- 
+}
+
+@media screen and (max-width: 720px) {
+  .sidebar_container {
+    display: none;
+  }
 }

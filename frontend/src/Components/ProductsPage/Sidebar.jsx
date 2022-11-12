@@ -2,6 +2,7 @@ import { Flex } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
+import "./Products.css"
 
 export const Sidebar = () => {
   const [searchParams, setSearchParams] = useSearchParams();
