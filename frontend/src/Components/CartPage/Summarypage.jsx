@@ -1,19 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { getCarts } from "../../Redux/Cart/action";
 import "./Cart.css";
 import { SummaryItem } from "./SummaryItems";
 
 export const Summary = () => {
-  const [items, setItems] = useState([
-    {
-      title:
-        "Wellbeing Nutrition Melts into Vegan Vitamin B12 + Folate Oral Thin Strip Misty Orange Mint Sugar Free",
-      description: "box of 30 disintegrating strips",
-      mrpPrice: 699,
-      price: 549,
-      quantity: 1,
-    },
-  ]);
+  // const address = useSelector((state) => state.CartReducer.address);
+  const { data } = useSelector((state) => state.CartReducer.carts);
+  const dispatch = useDispatch();
+  let date = new Date().toISOString().split("T")[0] ;
+  // console.log(address);
+
+  useEffect(() => {
+    dispatch(getCarts());
+  }, []);
+
+  const totalPrice = data?.reduce(
+    (acc, item) => acc + Number(item.strikedPrice * item.quantity),
+    0
+  );
+
+  const discountPrice = data?.reduce(
+    (acc, item) =>
+      acc + Number([(item.discount / 100) * item.strikedPrice] * item.quantity),
+    0
+  );
 
   const handleChange = (change) => {};
 
@@ -24,12 +37,18 @@ export const Summary = () => {
         <div className="left-container">
           <p>Your Items</p>
           <div className="summ-arrive">
-            <h6>Arriving by Wed, 16 Nov</h6>
+            <h6>Purchasing on {date} </h6>
             <p>1/1</p>
           </div>
           <div>
-            {items.map((item) => {
-              return <SummaryItem {...item} handleChange={handleChange} />;
+            {data?.map((item) => {
+              return (
+                <SummaryItem
+                  key={item._id}
+                  {...item}
+                  handleChange={handleChange}
+                />
+              );
             })}
           </div>
           <hr />
@@ -37,14 +56,16 @@ export const Summary = () => {
         <div className="right-container">
           <div className=" address-change">
             <h6>Select Address</h6>
-            <p>CHANGE</p>
+            <Link to={"/address-page"}>
+              <p>CHANGE</p>
+            </Link>
           </div>
           <div className="health-div add-div">
             <h5 className="fw-700">HOME</h5>
             <h6>Rohit Manojkumar Belure</h6>
-            <h6>Rohit Manojkumar Belure</h6>
-            <h6>Rohit Manojkumar Belure</h6>
-            <h6>Rohit Manojkumar Belure</h6>
+            <h6>7840949789</h6>
+            <h6>Peth, Nilanga, Peth, Nilanga</h6>
+            <h6>Latur, Maharashtra - 413521</h6>
           </div>
           <div className="neocoins">
             <div className="neocoin-div1">
@@ -72,11 +93,11 @@ export const Summary = () => {
           <div className="payment-div">
             <div className="pay-div">
               <p>Item Total(MRP)</p>
-              <p>₹699</p>
+              <p>₹ {totalPrice}</p>
             </div>
             <div className="pay-div">
               <p>Price Discount</p>
-              <p>-₹699</p>
+              <p>-₹ {discountPrice}</p>
             </div>
             <hr />
             <div className="pay-div">
@@ -86,12 +107,12 @@ export const Summary = () => {
             <hr />
             <div className="pay-div fs-14">
               <p>To be paid</p>
-              <p>₹549</p>
+              <p>₹ {totalPrice - discountPrice}</p>
             </div>
             <hr />
             <div className="pay-div bg-grey fs-14 col-grn">
               <p>Total Savings</p>
-              <p>₹150</p>
+              <p>₹ {discountPrice}</p>
             </div>
           </div>
           <div className="checkout">

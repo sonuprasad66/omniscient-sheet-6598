@@ -4,6 +4,7 @@ const initialState = {
   carts: [],
   isLoading: false,
   isError: false,
+  address: [],
 };
 
 export const reducer = (state = initialState, action) => {
@@ -14,10 +15,21 @@ export const reducer = (state = initialState, action) => {
       return { ...state, isLoading: true };
 
     case types.GET_CART_SUCCESS:
-      return { ...state, isLoading: false, isError: false, carts: payload };
+      return {
+        ...state,
+        isLoading: false,
+        isError: false,
+        carts: payload,
+      };
 
     case types.GET_CART_FAILURE:
       return { ...state, isLoading: false, isError: true };
+
+    case types.ADD_ADDRESS_REQUEST:
+      return {
+        ...state,
+        address: [{...payload}],
+      };
 
     default:
       return state;
