@@ -1,0 +1,35 @@
+.footer_Chakra_ui_container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-inline: 1rem;
+    padding: 2.5rem 0;
+    border: 1px solid;
+    width: 85%;
+    margin: 40px auto;
+}
+.footer_Chakra_inside{
+    display: grid;
+    gap: 55px;
+    margin: auto;
+    grid-template-columns: repeat(5,1fr);
+}
+@media only screen and (max-width:48em){
+   .footer_Chakra_inside{
+     display: flex;
+     flex-direction: column;
+     gap: 30px;
+   }
+
+}
+.footer_Chakra-each-link{
+    margin-top: 0.5rem;
+    color: #666666;
+    font-size: 11px;
+
+}
+.each-box-footer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

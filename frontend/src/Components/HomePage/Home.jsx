@@ -37,7 +37,7 @@ const Home = () => {
         <Swiper
       // install Swiper modules
       modules={[Navigation, Pagination, Scrollbar, A11y,Autoplay]}
-      spaceBetween={50}
+      spaceBetween={10}
       slidesPerView={1}
       autoplay
       pagination={{ clickable: true }}
@@ -83,18 +83,30 @@ const Home = () => {
       spaceBetween={10}
       breakpoints={{
         // when window width is >= 640px
+      0:{
+        slidesPerView:1,
+        spaceBetween:40
+      },
        450:{
-         "width":450,
-         slidesPerView:2
+         
+         slidesPerView:2,
+         spaceBetween:30
         },
         640: {
-          "width": 640,
+          
           slidesPerView: 3,
+          spaceBetween:25
         },
         // when window width is >= 768px
         768: {
-          "width": 768,
-          slidesPerView: 4,},
+          
+          slidesPerView: 4,
+          spaceBetween:20
+        },
+        900:{
+          slidesPerView:6,
+          spaceBetween:10
+        }
       }}
       navigation
       Autoplay
@@ -104,38 +116,112 @@ const Home = () => {
       onSlideChange={() => console.log('slide change')}
       className="swiper-ad"
     >
-      <SwiperSlide className='swiper_slide_1'>
+      <SwiperSlide className='swiper_slide_2'>
          <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/obsqdxfyey6qswltzhry.png'></Image>
       </SwiperSlide>
-      <SwiperSlide className='swiper_slide_1'>
+      <SwiperSlide className='swiper_slide_2'>
         <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/jvvov6ke3fbjxtxfc4mh.png'></Image>
       </SwiperSlide>
-      <SwiperSlide className='swiper_slide_1'>
+      <SwiperSlide className='swiper_slide_2'>
         <Image src="https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/zvd6zwzgmocbwjyohpfa.png"></Image>
       </SwiperSlide>
-      <SwiperSlide className='swiper_slide_1'>
+      <SwiperSlide className='swiper_slide_2'>
         <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/sojsfqsqrtwqgdpg5jlc.png'></Image>
       </SwiperSlide>
-      <SwiperSlide className='swiper_slide_1'>
+      <SwiperSlide className='swiper_slide_2'>
         <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/xo0ots8fv2ylazjd2ovb.png'></Image>
       </SwiperSlide>
-      <SwiperSlide className='swiper_slide_1'>
+      <SwiperSlide className='swiper_slide_2'>
         <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/xo0ots8fv2ylazjd2ovb.png'></Image>
       </SwiperSlide>
-      <SwiperSlide className='swiper_slide_1'>
+      <SwiperSlide className='swiper_slide_2'>
         <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/xo0ots8fv2ylazjd2ovb.png'></Image>
       </SwiperSlide>
-      <SwiperSlide className='swiper_slide_1'>
+      <SwiperSlide className='swiper_slide_2'>
         <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/xo0ots8fv2ylazjd2ovb.png'></Image>
       </SwiperSlide>
-      <SwiperSlide className='swiper_slide_1'>
+      <SwiperSlide className='swiper_slide_2'>
         <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/xo0ots8fv2ylazjd2ovb.png'></Image>
       </SwiperSlide>
     </Swiper>
             </div>
         </div>
         <div>
-            <p className='Featured_Brands'>Featured Brands
+            <p className='Featured_Brands'>Popular Categories
+            </p>
+            <div className='Featured_Brands_swiper'>
+            <Swiper
+      // install Swiper modules
+      modules={[Navigation, Pagination, Scrollbar, A11y,Autoplay]}
+      spaceBetween={10}
+      breakpoints={{
+        // when window width is >= 640px
+      0:{
+        slidesPerView:1,
+        spaceBetween:40
+      },
+       450:{
+         
+         slidesPerView:2,
+         spaceBetween:30
+        },
+        640: {
+          
+          slidesPerView: 3,
+          spaceBetween:25
+        },
+        // when window width is >= 768px
+        768: {
+          
+          slidesPerView: 4,
+          spaceBetween:20
+        },
+        900:{
+          slidesPerView:6,
+          spaceBetween:10
+        }
+      }}
+      navigation
+      Autoplay
+      pagination={{ clickable: true }}
+      //scrollbar={{ draggable: true }}
+      onSwiper={(swiper) => console.log(swiper)}
+      onSlideChange={() => console.log('slide change')}
+      className="swiper-ad"
+    >
+      <SwiperSlide className='swiper_slide_2'>
+         <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/obsqdxfyey6qswltzhry.png'></Image>
+      </SwiperSlide>
+      <SwiperSlide className='swiper_slide_2'>
+        <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/jvvov6ke3fbjxtxfc4mh.png'></Image>
+      </SwiperSlide>
+      <SwiperSlide className='swiper_slide_2'>
+        <Image src="https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/zvd6zwzgmocbwjyohpfa.png"></Image>
+      </SwiperSlide>
+      <SwiperSlide className='swiper_slide_2'>
+        <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/sojsfqsqrtwqgdpg5jlc.png'></Image>
+      </SwiperSlide>
+      <SwiperSlide className='swiper_slide_2'>
+        <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/xo0ots8fv2ylazjd2ovb.png'></Image>
+      </SwiperSlide>
+      <SwiperSlide className='swiper_slide_2'>
+        <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/xo0ots8fv2ylazjd2ovb.png'></Image>
+      </SwiperSlide>
+      <SwiperSlide className='swiper_slide_2'>
+        <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/xo0ots8fv2ylazjd2ovb.png'></Image>
+      </SwiperSlide>
+      <SwiperSlide className='swiper_slide_2'>
+        <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/xo0ots8fv2ylazjd2ovb.png'></Image>
+      </SwiperSlide>
+      <SwiperSlide className='swiper_slide_2'>
+        <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/xo0ots8fv2ylazjd2ovb.png'></Image>
+      </SwiperSlide>
+    </Swiper>
+            </div>
+        </div>
+        
+        <div>
+            <p className='Featured_Brands'>Top Sellers From Healthvit
             </p>
             <div className='Featured_Brands_swiper'>
             <Swiper
@@ -150,12 +236,12 @@ const Home = () => {
         },
         640: {
           "width": 640,
-          slidesPerView: 4,
+          slidesPerView: 3,
         },
         // when window width is >= 768px
         768: {
-          "width": 768,
-          slidesPerView: 6,},
+          "width": 1068,
+          slidesPerView: 4,},
       }}
       navigation
       Autoplay
@@ -163,40 +249,188 @@ const Home = () => {
       //scrollbar={{ draggable: true }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
-      className="swiper-ad"
+      className="swiper-ads"
     >
-      <SwiperSlide className='swiper_slide_1'>
+      <SwiperSlide className='swiper-slide-3'>
+        <div>
+          <div className='Healthvit_image'>
          <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/obsqdxfyey6qswltzhry.png'></Image>
+         </div>
+         </div>
       </SwiperSlide>
-      <SwiperSlide className='swiper_slide_1'>
+      <SwiperSlide className='swiper-slide-3'>
         <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/jvvov6ke3fbjxtxfc4mh.png'></Image>
+        <div className='Healthvit_heading'>
+             Healthvit Cenivitan Women multivitamin & multimineral
+         </div>
+         <Text fontSize='12px' color={'#757575'}> In love with React & Next</Text>
+         <div className='card_span_star'>
+            <div className='card_star_rating'>
+              4.3
+              <AiFillStar color='white'/>
+            </div>
+            7
+         </div>
+         <div className='card_cuttoff'>
+           <Text color={'#757575'} marginRight="2px">MRP</Text>
+           <span>550</span>
+         </div>
+         <div>
+          <Heading fontSize={'16px'} marginLeft={'10px'}>426</Heading>
+         </div>
       </SwiperSlide>
-      <SwiperSlide className='swiper_slide_1'>
-        <Image src="https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/zvd6zwzgmocbwjyohpfa.png"></Image>
+      <SwiperSlide className='swiper-slide-3'>
+        <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/jvvov6ke3fbjxtxfc4mh.png'></Image>
+        <div className='Healthvit_heading'>
+             Healthvit Cenivitan Women multivitamin & multimineral
+         </div>
+         <Text fontSize='12px' color={'#757575'}> In love with React & Next</Text>
+         <div className='card_span_star'>
+            <div className='card_star_rating'>
+              4.3
+              <AiFillStar color='white'/>
+            </div>
+            7
+         </div>
+         <div className='card_cuttoff'>
+           <Text color={'#757575'} marginRight="2px">MRP</Text>
+           <span>550</span>
+         </div>
+         <div>
+          <Heading fontSize={'16px'} marginLeft={'10px'}>426</Heading>
+         </div>
       </SwiperSlide>
-      <SwiperSlide className='swiper_slide_1'>
-        <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/sojsfqsqrtwqgdpg5jlc.png'></Image>
+      <SwiperSlide className='swiper-slide-3'>
+        <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/jvvov6ke3fbjxtxfc4mh.png'></Image>
+        <div className='Healthvit_heading'>
+             Healthvit Cenivitan Women multivitamin & multimineral
+         </div>
+         <Text fontSize='12px' color={'#757575'}> In love with React & Next</Text>
+         <div className='card_span_star'>
+            <div className='card_star_rating'>
+              4.3
+              <AiFillStar color='white'/>
+            </div>
+            7
+         </div>
+         <div className='card_cuttoff'>
+           <Text color={'#757575'} marginRight="2px">MRP</Text>
+           <span>550</span>
+         </div>
+         <div>
+          <Heading fontSize={'16px'} marginLeft={'10px'}>426</Heading>
+         </div>
       </SwiperSlide>
-      <SwiperSlide className='swiper_slide_1'>
-        <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/xo0ots8fv2ylazjd2ovb.png'></Image>
+      <SwiperSlide className='swiper-slide-3'>
+        <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/jvvov6ke3fbjxtxfc4mh.png'></Image>
+        <div className='Healthvit_heading'>
+             Healthvit Cenivitan Women multivitamin & multimineral
+         </div>
+         <Text fontSize='12px' color={'#757575'}> In love with React & Next</Text>
+         <div className='card_span_star'>
+            <div className='card_star_rating'>
+              4.3
+              <AiFillStar color='white'/>
+            </div>
+            7
+         </div>
+         <div className='card_cuttoff'>
+           <Text color={'#757575'} marginRight="2px">MRP</Text>
+           <span>550</span>
+         </div>
+         <div>
+          <Heading fontSize={'16px'} marginLeft={'10px'}>426</Heading>
+         </div>
       </SwiperSlide>
-      <SwiperSlide className='swiper_slide_1'>
-        <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/xo0ots8fv2ylazjd2ovb.png'></Image>
+      <SwiperSlide className='swiper-slide-3'>
+        <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/jvvov6ke3fbjxtxfc4mh.png'></Image>
+        <div className='Healthvit_heading'>
+             Healthvit Cenivitan Women multivitamin & multimineral
+         </div>
+         <Text fontSize='12px' color={'#757575'}> In love with React & Next</Text>
+         <div className='card_span_star'>
+            <div className='card_star_rating'>
+              4.3
+              <AiFillStar color='white'/>
+            </div>
+            7
+         </div>
+         <div className='card_cuttoff'>
+           <Text color={'#757575'} marginRight="2px">MRP</Text>
+           <span>550</span>
+         </div>
+         <div>
+          <Heading fontSize={'16px'} marginLeft={'10px'}>426</Heading>
+         </div>
       </SwiperSlide>
-      <SwiperSlide className='swiper_slide_1'>
-        <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/xo0ots8fv2ylazjd2ovb.png'></Image>
+      <SwiperSlide className='swiper-slide-3'>
+        <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/jvvov6ke3fbjxtxfc4mh.png'></Image>
+        <div className='Healthvit_heading'>
+             Healthvit Cenivitan Women multivitamin & multimineral
+         </div>
+         <Text fontSize='12px' color={'#757575'}> In love with React & Next</Text>
+         <div className='card_span_star'>
+            <div className='card_star_rating'>
+              4.3
+              <AiFillStar color='white'/>
+            </div>
+            7
+         </div>
+         <div className='card_cuttoff'>
+           <Text color={'#757575'} marginRight="2px">MRP</Text>
+           <span>550</span>
+         </div>
+         <div>
+          <Heading fontSize={'16px'} marginLeft={'10px'}>426</Heading>
+         </div>
       </SwiperSlide>
-      <SwiperSlide className='swiper_slide_1'>
-        <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/xo0ots8fv2ylazjd2ovb.png'></Image>
+      <SwiperSlide className='swiper-slide-3'>
+        <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/jvvov6ke3fbjxtxfc4mh.png'></Image>
+        <div className='Healthvit_heading'>
+             Healthvit Cenivitan Women multivitamin & multimineral
+         </div>
+         <Text fontSize='12px' color={'#757575'}> In love with React & Next</Text>
+         <div className='card_span_star'>
+            <div className='card_star_rating'>
+              4.3
+              <AiFillStar color='white'/>
+            </div>
+            7
+         </div>
+         <div className='card_cuttoff'>
+           <Text color={'#757575'} marginRight="2px">MRP</Text>
+           <span>550</span>
+         </div>
+         <div>
+          <Heading fontSize={'16px'} marginLeft={'10px'}>426</Heading>
+         </div>
       </SwiperSlide>
-      <SwiperSlide className='swiper_slide_1'>
-        <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/xo0ots8fv2ylazjd2ovb.png'></Image>
+      <SwiperSlide className='swiper-slide-3'>
+        <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/jvvov6ke3fbjxtxfc4mh.png'></Image>
+        <div className='Healthvit_heading'>
+             Healthvit Cenivitan Women multivitamin & multimineral
+         </div>
+         <Text fontSize='12px' color={'#757575'}> In love with React & Next</Text>
+         <div className='card_span_star'>
+            <div className='card_star_rating'>
+              4.3
+              <AiFillStar color='white'/>
+            </div>
+            7
+         </div>
+         <div className='card_cuttoff'>
+           <Text color={'#757575'} marginRight="2px">MRP</Text>
+           <span>550</span>
+         </div>
+         <div>
+          <Heading fontSize={'16px'} marginLeft={'10px'}>426</Heading>
+         </div>
       </SwiperSlide>
     </Swiper>
             </div>
-        </div> 
-        <div>
-            <p className='Featured_Brands'>Featured Brands
+      </div>
+      <div>
+            <p className='Featured_Brands'>Trending now
             </p>
             <div className='Featured_Brands_swiper'>
             <Swiper
@@ -406,7 +640,80 @@ const Home = () => {
             </div>
       </div>
       <div>
-            <p className='Featured_Brands'>Featured Brands
+            <p className='Featured_Brands'>Shop by Health Concerns
+            </p>
+            <div className='Featured_Brands_swiper'>
+            <Swiper
+      // install Swiper modules
+      modules={[Navigation, Pagination, Scrollbar, A11y,Autoplay]}
+      spaceBetween={10}
+      breakpoints={{
+        // when window width is >= 640px
+      0:{
+        slidesPerView:1,
+        spaceBetween:40
+      },
+       450:{
+         
+         slidesPerView:2,
+         spaceBetween:30
+        },
+        640: {
+          
+          slidesPerView: 3,
+          spaceBetween:25
+        },
+        // when window width is >= 768px
+        768: {
+          
+          slidesPerView: 4,
+          spaceBetween:20
+        },
+        900:{
+          slidesPerView:6,
+          spaceBetween:10
+        }
+      }}
+      navigation
+      Autoplay
+      pagination={{ clickable: true }}
+      //scrollbar={{ draggable: true }}
+      onSwiper={(swiper) => console.log(swiper)}
+      onSlideChange={() => console.log('slide change')}
+      className="swiper-ad"
+    >
+      <SwiperSlide className='swiper_slide_2'>
+         <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/obsqdxfyey6qswltzhry.png'></Image>
+      </SwiperSlide>
+      <SwiperSlide className='swiper_slide_2'>
+        <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/jvvov6ke3fbjxtxfc4mh.png'></Image>
+      </SwiperSlide>
+      <SwiperSlide className='swiper_slide_2'>
+        <Image src="https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/zvd6zwzgmocbwjyohpfa.png"></Image>
+      </SwiperSlide>
+      <SwiperSlide className='swiper_slide_2'>
+        <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/sojsfqsqrtwqgdpg5jlc.png'></Image>
+      </SwiperSlide>
+      <SwiperSlide className='swiper_slide_2'>
+        <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/xo0ots8fv2ylazjd2ovb.png'></Image>
+      </SwiperSlide>
+      <SwiperSlide className='swiper_slide_2'>
+        <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/xo0ots8fv2ylazjd2ovb.png'></Image>
+      </SwiperSlide>
+      <SwiperSlide className='swiper_slide_2'>
+        <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/xo0ots8fv2ylazjd2ovb.png'></Image>
+      </SwiperSlide>
+      <SwiperSlide className='swiper_slide_2'>
+        <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/xo0ots8fv2ylazjd2ovb.png'></Image>
+      </SwiperSlide>
+      <SwiperSlide className='swiper_slide_2'>
+        <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/xo0ots8fv2ylazjd2ovb.png'></Image>
+      </SwiperSlide>
+    </Swiper>
+            </div>
+        </div>
+        <div>
+            <p className='Featured_Brands'>Deals of the day
             </p>
             <div className='Featured_Brands_swiper'>
             <Swiper
@@ -441,7 +748,6 @@ const Home = () => {
           <div className='Healthvit_image'>
          <Image src='https://onemg.gumlet.io/a_ignore,w_150,h_150,c_fit,q_auto,f_auto/obsqdxfyey6qswltzhry.png'></Image>
          </div>
-         
          </div>
       </SwiperSlide>
       <SwiperSlide className='swiper-slide-3'>
@@ -648,6 +954,31 @@ const Home = () => {
     </AccordionPanel>
   </AccordionItem>
 </Accordion>
+<Box>
+  <Heading textAlign={'center'}>
+    India Largest Healthcare Platform
+  </Heading>
+  <Box padding={'2rem 0px'} display="flex" justifyContent={'space-around'} textAlign='center'>
+     <Box fontSize={'1.7rem'} fontWeight={'bold'}>
+      160+ <br/>
+      <Text fontWeight={'400'} fontSize="1.2rem">
+        Visitors
+      </Text>
+     </Box>
+     <Box fontSize={'1.7rem'} fontWeight={'bold'}>
+      27m+ <br/>
+      <Text fontWeight={'400'} fontSize="1.2rem">
+        Visitors
+      </Text>
+     </Box>
+     <Box fontSize={'1.7rem'} fontWeight={'bold'}>
+      1800+ <br/>
+      <Text fontWeight={'400'} fontSize="1.2rem">
+        Visitors
+      </Text>
+     </Box>
+  </Box>
+</Box>
     </div>
     </div>
   )

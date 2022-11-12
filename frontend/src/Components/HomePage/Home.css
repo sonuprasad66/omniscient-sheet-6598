@@ -1,37 +1,50 @@
+*{
+  margin: 0;
+  padding: 0;
+}
 .top_Ad_section{
     display: flex;
-    width: 80%;
+    width: 95vw;
     height: auto;
     border: 1px solid;
     margin-top: 20px;
-    margin-left: 10%;
+    margin-left: 20px;
+    margin-right: 20px;
  }
  .top_Ad_section img{
      width: 100%;
+     height: 100%;
      object-fit: cover;
      overflow: hidden;
  }
  .Ad_swiper-section{
      width: 60%;
-     
  }
  .Ad_swiper-section>img{
      width: auto;
  }
  .swiper-ad{
-    height: 180px;
+     height: 100%;
      padding: 0%;
-     margin-bottom: 10px;
+     
  }
  .swiper_slide_1>img{
     height: 100%;
     width: 100%;
     object-fit: cover;
+    margin: auto;
  }
+ .swiper_slide_2>img{
+  height: 110px;
+  width: 124px;
+  object-fit: cover;
+  margin: auto;
+}
  .Heading_below_ad{
      display: flex;
      align-items: center;
      justify-content: center;
+
  }
  .ad_below_heading{
      display: flex;
@@ -44,28 +57,21 @@
  .Featured_Brands{
      font-size: 30px;
      color:"#808080";
-     margin-left: 3%;
+     margin-left: 10%;
+     margin-top: 3%;
+     margin-bottom: 20px;
  }
  .Featured_Brands_swiper{
      width: 85%;
-     
      margin: auto;
  }
  .swiper-container {
     width: 480px;
   }
   
-  @media screen and (min-width: 640px) {
-    .swiper-container {
-      width: 640px;
-    }
-  }
   
-  @media screen and (min-width: 768px) {
-    .swiper-container {
-      width: 768px;
-    }
-  }
+  
+  
   .Healthvit_image{
     width: 200px;
     margin: auto;
@@ -104,8 +110,15 @@
   .swiper-slide-3{
     height: 350px;
     height: 25%;
-    padding: 10px;
+    padding: 20px;
     border: 1px solid rgb(238, 238, 238);
     display: block;
     margin: auto;
+  }
+  .swiper-slide-3 img{
+    margin: auto;
+    height: 150px;
+    width: 129px;
+   border-style: none;
+    
   }
