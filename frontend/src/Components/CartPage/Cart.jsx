@@ -1,28 +1,48 @@
 import React from "react";
-import { useState } from "react";
 import "./Cart.css";
 import { Item } from "./Item";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { deleteCart, getCarts, updateCart } from "../../Redux/Cart/action";
 
 export const Cart = () => {
-  const [items, setItems] = useState([
-    {
-      title:
-        "Wellbeing Nutrition Melts into Vegan Vitamin B12 + Folate Oral Thin Strip Misty Orange Mint Sugar Free",
-      description: "box of 30 disintegrating strips",
-      mrpPrice: 699,
-      price: 549,
-      quantity: 1,
-    },
-  ]);
+  const { data } = useSelector((state) => state.CartReducer.carts);
+  const dispatch = useDispatch();
 
-  const handleChange = (change) => {
-    let temp = Number(items.quantity);
-    temp = temp + change;
-    console.log(change, "temp is ", temp);
-    // setItems({
-    //   ...items,
-    //   quantity: quantity + change,
-    // });
+  useEffect(() => {
+    dispatch(getCarts());
+  }, []);
+
+  const totalPrice = data?.reduce(
+    (acc, item) => acc + Number(item.strikedPrice * item.quantity),
+    0
+  );
+
+  const discountPrice = data?.reduce(
+    (acc, item) =>
+      acc + Number([(item.discount / 100) * item.strikedPrice] * item.quantity),
+    0
+  );
+
+  const handleChange = (id, change) => {
+    let temp = data.filter((item) => (item._id === id ? item : null));
+    let temp2 = temp[0].quantity + change;
+    const payload = {
+      quantity: temp2,
+    };
+
+    if (temp2 >= 1) {
+      dispatch(updateCart(id, payload)).then((res) => {
+        dispatch(getCarts());
+      });
+    }
+  };
+
+  const handleDelete = (id) => {
+    dispatch(deleteCart(id)).then((res) => {
+      dispatch(getCarts());
+    });
   };
 
   return (
@@ -30,11 +50,20 @@ export const Cart = () => {
       <div className="left-container">
         <p>Items NOT Requiring Prescription</p>
         <div>
-          {items.map((item) => {
-            return <Item {...item} handleChange={handleChange} />;
-          })}
+          {data !== undefined
+            ? data.map((item) => {
+                return (
+                  <Item
+                    key={item._id}
+                    {...item}
+                    handleChange={handleChange}
+                    handleDelete={handleDelete}
+                  />
+                );
+              })
+            : null}
         </div>
-        <p>Deals from Dettol</p>
+        {/* <p>Deals from Dettol</p> */}
       </div>
       <div className="right-container">
         <div className="coupon-div">
@@ -119,11 +148,11 @@ export const Cart = () => {
         <div className="payment-div">
           <div className="pay-div">
             <p>Item Total(MRP)</p>
-            <p>₹699</p>
+            <p>₹ {totalPrice}</p>
           </div>
           <div className="pay-div">
             <p>Price Discount</p>
-            <p>-₹699</p>
+            <p>-₹ {discountPrice}</p>
           </div>
           <hr />
           <div className="pay-div">
@@ -133,12 +162,12 @@ export const Cart = () => {
           <hr />
           <div className="pay-div fs-14">
             <p>To be paid</p>
-            <p>₹549</p>
+            <p>₹ {totalPrice - discountPrice}</p>
           </div>
           <hr />
           <div className="pay-div bg-grey fs-14 col-grn">
             <p>Total Savings</p>
-            <p>₹150</p>
+            <p>₹ {discountPrice}</p>
           </div>
         </div>
         <div className="checkout">
@@ -146,7 +175,9 @@ export const Cart = () => {
             <p>Your delivery location</p>
             <h6>Latur</h6>
           </div>
-          <button>CHECKOUT</button>
+          <Link to={"/address-page"}>
+            <button>CHECKOUT</button>
+          </Link>
         </div>
       </div>
     </div>
