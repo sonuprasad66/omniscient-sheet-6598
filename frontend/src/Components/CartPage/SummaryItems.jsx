@@ -1,9 +1,9 @@
 import "./Cart.css";
 export const SummaryItem = ({
-  title,
-  description,
+  productName,
+  shortDesc,
   price,
-  mrpPrice,
+  strikedPrice,
   quantity,
   handleChange,
 }) => {
@@ -17,12 +17,12 @@ export const SummaryItem = ({
         width={"40px"}
       />
       <div className="left-item-container">
-        <h6>{title}</h6>
-        <p>{description}</p>
+        <h6>{productName}</h6>
+        <p>{shortDesc}</p>
       </div>
       <div className="right-item-container">
         <h6>₹ {price}</h6>
-        <p>MRP ₹{mrpPrice}</p>
+        <p>MRP ₹{strikedPrice}</p>
       </div>
     </div>
   );
