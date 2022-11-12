@@ -4,7 +4,6 @@ require("dotenv").config();
 
 const authentication = (req, res, next) => {
   const token = req.headers?.authorization?.split(" ")[1];
-  //   console.log(token);
   if (!token) {
     res.send({ msg: " Login Again" });
   } else {
