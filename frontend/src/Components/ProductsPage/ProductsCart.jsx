@@ -14,11 +14,8 @@ export const ProductsCart = ({ product }) => {
   };
 
   return (
-    <div
-      className="productCart_container"
-      onClick={() => handleDetails(product._id)}
-    >
-      <div className="product_image">
+    <div className="productCart_container">
+      <div className="product_image" onClick={() => handleDetails(product._id)}>
         <img src={product.imageUrl} alt="product" />
       </div>
 
