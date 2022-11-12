@@ -2,8 +2,10 @@ import * as types from "./actionTypes";
 
 const initialState = {
   products: [],
-  isLoading: false,
-  isError: false,
+  
+    isLoading: false,
+    isError: false,
+
 };
 
 export const reducer = (state = initialState, action) => {
@@ -18,6 +20,9 @@ export const reducer = (state = initialState, action) => {
 
     case types.GET_PRODUCTS_FAILURE:
       return { ...state, isLoading: false, isError: true, products: [] };
+
+     
+
 
     default:
       return state;

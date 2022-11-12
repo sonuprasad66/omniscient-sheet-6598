@@ -13,3 +13,4 @@ export const getProducts = (params) => (dispatch) => {
       return dispatch({ type: types.GET_PRODUCTS_FAILURE, payload: err });
     });
 };
+
