@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main_container {
+  width: 100%;
+  border: 1px solid black;
+  padding: 30px 30px;
+  display: flex;
+  gap: 2%;
+}
+
+.sidebar {
+  width: 200px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 0px 7px 0px;
+}
+
+.product {
+  width: 80%;
+  /* border: 1px solid red; */
+}
+
+/* ========================ProductCart======================================= */
+
+.productCart_container {
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.productCart_container:hover {
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  transition: 0.5s ease;
+}
+
+.product_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.product_image img {
+  height: 150px;
+  width: 100px;
+}
+
+/* ========================ProductCart======================================= */
+
+.sidebar_container {
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 0px 7px 0px;
+  padding: 10px;
+}
+.sidebar_container label {
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.add_btn {
+  color: #ff6f61;
+  border: 1px solid #ff6f61;
+  padding: 1px 15px 1px 15px;
+  border-radius: 20px;
+}
+
+.add_btn:hover {
+  color: #ffffff;
+  background: #ff6f61;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 720px) {
+  .sidebar_container {
+    display: none;
+  }
+}

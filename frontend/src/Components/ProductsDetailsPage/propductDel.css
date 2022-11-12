@@ -1,16 +1,16 @@
 #product {
-    
+
     width: 100%;
-
-
     margin-top: 100px;
     margin-bottom: 100px;
+
 }
 .productdel{
     display: flex;
     gap: 20px;
     /* border:  1px solid rgb(177, 47, 47); */
-    width: 80%;
+    
+    width: 90%;
 margin: auto;
 }
 .productimg{
@@ -19,8 +19,8 @@ margin: auto;
     
 }
 .productimg img {
-    width: 70px;
-    height: 50px;
+    width: 60px;
+    height: 40px;
     margin: 10px;
     /* border: 1px solid black; */
 }
@@ -29,37 +29,52 @@ margin: auto;
     
 }
 .producttop img {
-    width: 300;
+    width: 300px;
     height: 350px;
+    
 }
-
+.bottel{
+    border: 1px solid black;
+    
+    width: 100px;
+    text-align: center;
+    margin: 10px;
+    background-color: beige;
+}
+.bottel :hover{
+    background-color: bisque;
+}
 .productheding{
     /* border: 1px solid rgb(145, 21, 21); */
-    width: 800px;
-    margin: auto;
+    
+    /* margin: auto; */
+    width: 700px;
     
 }
 .productheding h1{
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
     margin: 10px;
 }
 .productheding h4{
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
     margin: 10px;
 }
 .productheding ul{
-    font-size: 20px;
+    font-size: 15px;
     margin-left: 25px;
 }
 .productcard{
     /* border: 1px solid rgb(36, 21, 145); */
     /* width: 500px; */
     margin: auto;
-    margin: 10px;
+    /* margin: 10px; */
+    /* height: 480px; */
+
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 5%;
+    margin-bottom: 20px;
 }
 .images img{
     margin: 20px;
@@ -67,16 +82,46 @@ margin: auto;
     width: 70%;
 
 }
+.dates1{
+    /* height: 120px; */
+    font-size: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px;
+}
+.contain{
+    color: blue;
+}
+.dates1 p {
+    margin-left: 10px;
+    margin-top: 20px;
+}
+.offer{
+    font-size: 15px;
+    margin-top: 20px;
+    height: 120px;
+    border: 1px dotted;
+}
+.offer p{
+    margin-top: 20px;
+    font-size: 15px;
+    text-align:initial;
+}
 
 .btn{
     margin: 10px;
-    font-size: 25px;
-    margin-top: 60px;
+    font-size: 20px;
+    margin-top: 10px;
     text-align: center;
     background-color: #ee4a3c;
-    height: 60px;
+    /* height: 60px; */
     font-weight: bold;
     color: white;
+    
+}
+.tbn::after{
+    cursor: pointer;
+    background-color: #1aab2a;
+    color: black;
 }
 .btn1{
     margin-top: 10px;
@@ -87,7 +132,9 @@ margin: auto;
 .rating{
     color: #1aab2a;
 }
-
+span{
+    font-weight: bold;
+}
 @media all and (max-width: 1000px) and (min-width: 850px) {
     /* mobile-devices */
     .productdel{
