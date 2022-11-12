@@ -28,7 +28,7 @@ export const reducer = (state = initialState, action) => {
     case types.ADD_ADDRESS_REQUEST:
       return {
         ...state,
-        address: [{...payload}],
+        address: [{ ...payload }],
       };
 
     default:

@@ -38,5 +38,19 @@ export const deleteCart = (id) => (dispatch) => {
 };
 
 export const addAddress = (payload) => (dispatch) => {
-  return dispatch({ type: types.ADD_ADDRESS_REQUEST, payload })
+  return dispatch({ type: types.ADD_ADDRESS_REQUEST, payload });
+};
+
+export const addCart = (id) => (dispatch) => {
+  dispatch({ type: types.ADD_CART_REQUEST });
+  return axios
+    .post(`http://localhost:8080/cart/add`, {
+      _id: id,
+    })
+    .then((res) => {
+      return dispatch({ type: types.ADD_CART_SUCCESS, payload: res.res });
+    })
+    .catch((err) => {
+      return dispatch({ type: types.ADD_CART_FAILURE, payload: err });
+    });
 };
