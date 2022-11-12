@@ -44,9 +44,9 @@ const addData=() =>{
         Tata 1mg Healthcare Solutions Private Limited
         </p>
         </div>
-        <div style={{marginTop:"50px",fontSize:"20px",marginLeft:"10px"}}>
+        <div style={{marginTop:"30px",fontSize:"20px",marginLeft:"10px"}}>
         <h3>Pack Size (2)</h3>
-        <div style={{fontSize:"20px",marginLeft:"10px",display:"flex",gap:"20px"}}>
+        <div style={{fontSize:"15px",marginLeft:"10px",display:"flex",gap:"20px"}}>
           
           <div className="bottel">
             <p>30 teblets</p>
@@ -59,7 +59,7 @@ const addData=() =>{
           </div>
         </div>
 
-        <div style={{marginTop:"30px"}}>
+        <div style={{marginTop:"10px"}}>
         <h4>Product highlights</h4>
         <ul>
           <li>Supports bone, skin and eye health </li>
@@ -82,32 +82,32 @@ const addData=() =>{
               </p>
               </div>
        <form>
-       <div style={{fontSize:"30px",margin: "30px"}}>
+       <div style={{fontSize:"20px",margin: "20px"}}>
        <input  style={{ marginLeft: "15px", height: "20px", width: "20px" }}
         name="pcheck"  value="88" type="radio"/>&nbsp;&nbsp;
         <label htmlFor="price">₹ 500</label>
-        <p style={{color:"#666666", textDecoration:"line-through",fontSize:"25px", lineHeight:"23px", marginTop:"-35px", marginLeft:"135px"}} >
+        <p style={{color:"#666666", textDecoration:"line-through",fontSize:"18px", lineHeight:"23px", marginTop:"-28px", marginLeft:"110px"}} >
         ₹ 999
         </p>
-        <p style={{ fontWeight:"400",color:"#42ba4f",fontSize:"25px",marginTop:"-28px",marginLeft:"210px"}} >
+        <p style={{ fontWeight:"400",color:"#42ba4f",fontSize:"18px",marginTop:"-23px",marginLeft:"180px"}} >
            50% off
         </p>
     </div>
 
-    <div style={{fontSize:"30px",margin: "30px"}}>
+    <div style={{fontSize:"20px",margin: "20px"}}>
       <input  style={{ marginLeft: "15px", height: "20px", width: "20px" }}
         name="pcheck"  value="88" type="radio"/>&nbsp;&nbsp;
        <label htmlFor="price">₹ 700 
        
         </label>
-        <img style={{ fontWeight:"500",color:"#42ba4f",fontSize:"16px",marginTop:"-25px",marginLeft:"133px"}}
+        <img style={{ fontWeight:"500",color:"#42ba4f",fontSize:"16px",marginTop:"-25px",marginLeft:"100px"}}
         src="https://res.cloudinary.com/du8msdgbj/image/upload/v1613645053/marketing/phb2bz61etrdmuurfdoq.png" alt="" />
-        <p style={{ fontWeight:"400",fontSize:"14px",marginTop:"-25px",marginLeft:"230px"}} >
+        <p style={{ fontWeight:"400",fontSize:"14px",marginTop:"-25px",marginLeft:"180px"}} >
         member price
 free shipping and 5% Extra cashback
         </p>
       </div>
-      <div  style={{margin:"20px",fontSize:"20px", scrollbarColor:"5"}}>
+      <div  style={{margin:"20px",fontSize:"15px"}}>
         <label>Inclusive of all taxes</label>
         <br/>
         <select>
