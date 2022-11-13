@@ -1,5 +1,4 @@
-import React from "react";
-import { Button, Heading, Input } from "@chakra-ui/react";
+
 import { SlLocationPin } from "react-icons/sl";
 import { GrCart } from "react-icons/gr";
 import { BiSearch } from "react-icons/bi";
