@@ -4,12 +4,30 @@
 }
 .top_Ad_section{
     display: flex;
-    width: 95vw;
+    width: 90vw;
     height: auto;
     border: 1px solid;
     margin-top: 20px;
-    margin-left: 20px;
+    margin-left: 40px;
     margin-right: 20px;
+ }
+ .Ad_swiper-section{
+  width: 60%;
+}
+ @media only screen and (max-width:600px){
+   .top_Ad_section{
+    display: flex;
+    flex-direction: column;
+   }
+   .Ad_swiper-section{
+    width: 90vw;
+    margin: auto;
+}  .top_Ad_section img{
+    width: 500px;
+     height: 100%;
+     object-fit: cover;
+      overflow: hidden;
+}
  }
  .top_Ad_section img{
      width: 100%;
@@ -17,11 +35,9 @@
      object-fit: cover;
      overflow: hidden;
  }
- .Ad_swiper-section{
-     width: 60%;
- }
+ 
  .Ad_swiper-section>img{
-     width: auto;
+     width: 100%;
  }
  .swiper-ad{
      height: 100%;
@@ -34,11 +50,17 @@
     object-fit: cover;
     margin: auto;
  }
+ .swiper_slide_2{
+  text-align: center;
+  
+ }
+  
  .swiper_slide_2>img{
   height: 110px;
   width: 124px;
   object-fit: cover;
   margin: auto;
+  
 }
  .Heading_below_ad{
      display: flex;
@@ -97,7 +119,9 @@
   .card_cuttoff span{
     text-decoration: line-through;
   }
-  
+  .swiper-button-next{
+    color:red ;
+  }
   .card_star_rating{
     background-color: #1AAB2A;
     font:12px sans-serif;
@@ -114,11 +138,16 @@
     border: 1px solid rgb(238, 238, 238);
     display: block;
     margin: auto;
+    transition:all 0.3s ease;
   }
   .swiper-slide-3 img{
     margin: auto;
     height: 150px;
     width: 129px;
    border-style: none;
-    
+   
+  }
+  .swiper-slide-3:hover{
+    transition: all 1s ease 0s;
+    box-shadow: rgb(0 0 0 / 30%) 0px 0px 9px 0px; 
   }

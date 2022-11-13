@@ -30,6 +30,9 @@ export const Products = () => {
     }
   }, [location.search]);
 
+
+
+
   // let arr;
   // const handelSelect = (e) => {
   //   console.log(e);
