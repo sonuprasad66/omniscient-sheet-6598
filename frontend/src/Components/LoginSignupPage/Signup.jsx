@@ -1,10 +1,11 @@
 import React from "react";
-import { useEffect } from "react";
+import { useEffect } from "react"; 
+import {Navigate} from "react-router-dom"
 import { useState } from "react";
 import "./Loginsignup.css"
 import axios from "axios"
-export const Signup = ({toggle,settoggle}) => {
-  
+export const Signup = ({toggle,settoggle,change,setchange}) => {
+
   let [value,setvalue]=useState([{
     heading:"Health Related Queries?",
     about:"Consult our certified doctors from anywhere, anytime, and for free. We guarantee your privacy.",
@@ -39,11 +40,12 @@ export const Signup = ({toggle,settoggle}) => {
     alert("start")
     let value={
       email,
-      phoneNo:info,
+      phone:info,
       password
     }
     console.log(value)
     axios.post("http://localhost:8080/signup",value).then((val)=>{console.log(val);alert("signup Sucessfull")}).catch((e)=>console.log(e))
+    setchange(email)
   }
   useEffect(()=>{
     setInterval(()=>{
@@ -307,6 +309,23 @@ export const Signup = ({toggle,settoggle}) => {
                   </div>
                 </div>
               )}
+            </div>
+            <div className="innertwo">
+              <a className="button-text" onClick={()=>{funn();settoggle(false);change(true)}} ><span >Continue</span></a>
+              <div className="style__bottom-content___FTTVN"><div className="style__fh-40___C40iw"><span className="style__text___3XOlZ style__text-larger___2DsZQ style__d-f___25FFn"><span></span></span><div className="style__text___3XOlZ style__text-lighter___2G_Vn style__text-small___2Rh34 style__tnc-wrapper___3iYER"><div >By Signing in, you agree to our </div><div ><a href="/tnc"><span className="style__tnc___3w0N1">Terms and Conditions</span></a> &amp; <a href="/privacypolicy"><span className="style__tnc___3w0N1">Privacy Policy</span></a></div></div></div><div className="style__bottom-content___FTTVN"><div className="style__fh-20___1-IuS"></div><div className="style__link___rBZIG style__tnc-wrapper___3iYER"><span>Need Help? Get In Touch</span></div></div></div>
+            </div>
+            
+          </div>:
+            <div>
+          <div>
+          <h1 className="h11">Sign Up</h1>
+          <span className="style__text___2naEQ" ><span >Please enter your Mobile number to receive One Time Password (OTP)</span></span>
+          </div>
+          
+          <div className="style__wrapper___EMT3C " >
+            <label className="style__input-label___1kYYX">Enter Email ID or Mobile Number</label>
+            <div className="style__input-wrapper___3kd0w" >
+              <input type="number" onChange={(e)=>setinfo(e.target.value)} className="style__input___3NmkT" />
             </div>
           )}
         </div>

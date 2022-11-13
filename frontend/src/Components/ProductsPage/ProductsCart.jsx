@@ -6,8 +6,10 @@ import { FaCartPlus } from "react-icons/fa";
 import { addCart } from "../../Redux/Cart/action";
 import { useDispatch } from "react-redux";
 import { getProductsdetails } from "../../Redux/ProductDetails/action";
+import { useNavigate } from "react-router";
 
 export const ProductsCart = ({ product }) => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const handleAddToCart = (id) => {

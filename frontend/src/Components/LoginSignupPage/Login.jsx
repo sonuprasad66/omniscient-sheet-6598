@@ -54,6 +54,47 @@ export const Login = ({ toggle, settoggle }) => {
       .catch((e) => console.log(e));
   };
   return toggle ? (
+export const Login = ({toggle,settoggle}) => {
+  let [value,setvalue]=useState([{
+    heading:"Health Related Queries?",
+    about:"Consult our certified doctors from anywhere, anytime, and for free. We guarantee your privacy.",
+    img:"https://www.1mg.com/images/login-signup/Health-Related-Queries.png"
+  },{
+    heading:"Lab Tests at Home",
+    about:"Book any test from any lab. We'll collect the sample and send the reports. Save up to 80% every time.",
+    img:"https://www.1mg.com/images/login-signup/Lab-Tests-at-Home.png"
+  },
+  {
+    heading:"Medicines, Home Delivered",
+    about:"Order any medicine or health product and we’ll deliver it for free. Enjoy discounts on everything.",
+    img:"https://www.1mg.com/images/login-signup/Home-Delivery-of-Medicines.png"
+
+  },{
+    img:"https://www.1mg.com/images/login-signup/Know-Your-Medicines.png",
+    heading:"Know Your Medicines",
+    about:"View medicine information like usage, side effects and cheaper substitutes before you take them."
+  },{
+    img:"https://www.1mg.com/images/login-signup/Your-Go-To-Health-App.png",
+    heading:"Make Healthcare Simpler",
+    about:"Get medicine information, order medicines, book lab tests and consult doctors online from the comfort of your home."
+
+  }])
+  let [st,setst]=useState(false)
+  let [info,setinfo]=useState("")
+  let [password,setpassword]=useState("")
+  let funn=async()=>{
+    alert("start")
+    let value={
+
+      
+      email:info,
+      password:password
+
+    }
+    console.log(value)
+    axios.post("http://localhost:8080/login",value).then((val)=>{console.log(val);alert("Login Successfull")}).catch((e)=>console.log(e))
+  }
+  return (toggle)?(
     <>
       <div className={"modal "} id="modal">
         <div className="modal-header">
@@ -166,6 +207,22 @@ export const Login = ({ toggle, settoggle }) => {
                     </div>
                   </div>
                 </div>
+            <div className="innertwo">
+              <a className="button-text" onClick={()=>{funn();settoggle(false)}} ><span >DONE</span></a>
+              <div className="style__bottom-content___FTTVN"><div className="style__fh-40___C40iw"><span className="style__text___3XOlZ style__text-larger___2DsZQ style__d-f___25FFn"></span><div className="style__text___3XOlZ style__text-lighter___2G_Vn style__text-small___2Rh34 style__tnc-wrapper___3iYER"><div ><a href="/tnc"></a>  <a href="/privacypolicy"></a></div></div></div><div className="style__bottom-content___FTTVN"><div className="style__fh-20___1-IuS"></div><div className="style__link___rBZIG style__tnc-wrapper___3iYER"><span>Need Help? Get In Touch</span></div></div></div>
+            </div>
+            
+          </div>:
+          <div className="inner-body">
+            <div>
+            <h1 className="h11">Login</h1>
+            <span className="style__text___2naEQ" ><span >Get access to your orders, lab tests &amp; doctor consultations</span></span>
+            </div>
+            
+            <div className="style__wrapper___EMT3C " >
+              <label className="style__input-label___1kYYX">Enter Email ID or Mobile Number</label>
+              <div className="style__input-wrapper___3kd0w" >
+                <input onChange={(e)=>{setinfo(e.target.value)}} className="style__input___3NmkT" />
               </div>
             </div>
           ) : (

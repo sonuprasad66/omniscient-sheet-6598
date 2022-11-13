@@ -5,27 +5,32 @@ import { useParams } from "react-router-dom";
 import { getProductsdetails } from "../../Redux/ProductDetails/action";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+import { ImStarEmpty } from "react-icons/im";
+import { addCart } from "../../Redux/Cart/action";
 
 const ProductDetails = () => {
-  const dispatch = useDispatch();
-
+  const { data } = useSelector((state) => state.DetailsReducer.products);
   const { id } = useParams();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getProductsdetails(id));
-  }, [getProductsdetails, dispatch, id]);
+  }, [dispatch]);
 
-  const { data } = useSelector((state) => state.DetailsReducer.products);
+  
 
-  console.log(data);
+  // console.log(data);
 
   // console.log(id)
-  const hendelADDToCart = (id) => {};
+  const hendelADDToCart = (id) => {
+    // console.log(id)
+    dispatch(addCart(id))
+  };
 
   return (
     <div id="product">
       <div className="productdel">
-        <div className="productimg">
+        {/* <div className="productimg">
           <img
             src="https://onemg.gumlet.io/images/q_auto,h_150,w_150,c_fit,f_auto/qh1au45w8u7cfvf3lg3i/tata-1mg-women-s-multivitamin-zinc-vitamin-c-calcium-vitamin-d-and-iron-immunity-booster-tablet.jpg"
             alt="a"
@@ -50,14 +55,16 @@ const ProductDetails = () => {
             src="https://onemg.gumlet.io/images/q_auto,h_150,w_150,c_fit,f_auto/qh1au45w8u7cfvf3lg3i/tata-1mg-women-s-multivitamin-zinc-vitamin-c-calcium-vitamin-d-and-iron-immunity-booster-tablet.jpg"
             alt="a"
           />
-        </div>
+        </div> */}
+
         <div className="producttop">
-          <img src="https://onemg.gumlet.io/images/q_auto,h_150,w_150,c_fit,f_auto/qh1au45w8u7cfvf3lg3i/tata-1mg-women-s-multivitamin-zinc-vitamin-c-calcium-vitamin-d-and-iron-immunity-booster-tablet.jpg" />
+        
+
+         <img src={data?.imageUrl || "https://onemg.gumlet.io/images/q_auto,h_150,w_150,c_fit,f_auto/qh1au45w8u7cfvf3lg3i/tata-1mg-women-s-multivitamin-zinc-vitamin-c-calcium-vitamin-d-and-iron-immunity-booster-tablet.jpg"}  alt="products_id" />
         </div>
         <div className="productheding">
           <h1>
-            Tata 1mg Women's Multivitamin, Zinc, Vitamin C, Calcium, Vitamin D,
-            and Iron Immunity Booster Tablet
+            {data?.productName || "Tata 1mg Women's Multivitamin, Zinc, Vitamin C, Calcium, Vitamin D, and Iron Immunity Booster Tablet"}
           </h1>
 
           <div
@@ -68,7 +75,7 @@ const ProductDetails = () => {
               color: "#ff6f61",
             }}
           >
-            Tata 1mg Healthcare Solutions Private Limited
+           {data?.brand || "Tata 1mg Healthcare Solutions Private Limited"} 
           </div>
           <div
             className="rating"
@@ -82,7 +89,7 @@ const ProductDetails = () => {
               margin: "10px",
             }}
           >
-            3.5
+             {data?.ratings || "3.5"} 
           </div>
           <p
             style={{
@@ -92,7 +99,7 @@ const ProductDetails = () => {
               color: "#ff6f61",
             }}
           >
-            1023 Ratings & 185 Reviews
+            {data?.numberOfRatings || "1023 Ratings & 185 Reviews"}
           </p>
           <div
             style={{
@@ -115,7 +122,7 @@ const ProductDetails = () => {
                 marginLeft: "40px",
               }}
             >
-              Tata 1mg Healthcare Solutions Private Limited
+              {data?.shortDesc || "Tata 1mg Healthcare Solutions Private Limited"} 
             </p>
           </div>
           <div
@@ -130,9 +137,9 @@ const ProductDetails = () => {
                 gap: "20px",
               }}
             >
-              <div className="bottel">
+              <div className="bottel">  
                 <p>30 teblets</p>
-                <p>₹225</p>
+                <p>{data?.price || "₹225"}</p>
               </div>
               <div className="bottel">
                 <p>30 teblets</p>
@@ -150,10 +157,7 @@ const ProductDetails = () => {
               <li>Helps improve immunity</li>
               <li>Improves digestion and restores gut bacteria</li>
               <li>Improves energy levels and supports brain health </li>
-              <li>
-                A concoction of multi-vitamins, essential minerals, a women
-              </li>
-              <li>centric health blend, and pre and pro-biotics complex</li>
+              
             </ul>
           </div>
         </div>
@@ -191,11 +195,11 @@ const ProductDetails = () => {
                 <input
                   style={{ marginLeft: "15px", height: "20px", width: "20px" }}
                   name="pcheck"
-                  value="88"
+                  value=  {data?.price || "₹500"}
                   type="radio"
                 />
                 &nbsp;&nbsp;
-                <label htmlFor="price">₹ 500</label>
+                <label htmlFor="price">₹ {data?.price || "₹500"}</label>
                 <p
                   style={{
                     color: "#666666",
@@ -206,18 +210,18 @@ const ProductDetails = () => {
                     marginLeft: "110px",
                   }}
                 >
-                  ₹ 999
+                  ₹ {data?.strikedPrice || "999"}
                 </p>
                 <p
                   style={{
                     fontWeight: "400",
                     color: "#42ba4f",
                     fontSize: "18px",
-                    marginTop: "-23px",
-                    marginLeft: "180px",
+                    marginTop: "-25px",
+                    marginLeft: "165px",
                   }}
                 >
-                  50% off
+                  {data?.discount || "50% "}% off
                 </p>
               </div>
 
@@ -225,7 +229,7 @@ const ProductDetails = () => {
                 <input
                   style={{ marginLeft: "15px", height: "20px", width: "20px" }}
                   name="pcheck"
-                  value="88"
+                  value="500"
                   type="radio"
                 />
                 &nbsp;&nbsp;

@@ -27,14 +27,8 @@ ProductRouter.get("/alldata", async (req, res) => {
     console.log(q);
     res.send({ data: data, message: "request successfull" });
   }
-});
-
   const { brand, discount } = req.query;
   let data;
-
-  // console.log(discount);
-
-
   if (brand && discount) {
     data = await ProductModel.find({
       brand: { $in: brand },
@@ -53,6 +47,14 @@ ProductRouter.get("/alldata", async (req, res) => {
   }
   res.send({ data: data, message: "request successfull" });
 });
+
+  
+
+  // console.log(discount);
+
+
+ ;
+
 
 module.exports = {
   ProductRouter,
