@@ -6,7 +6,7 @@ var jwt = require("jsonwebtoken");
 require("dotenv").config();
 
 userRouter.post("/signup", async (req, res) => {
-  const { email, password,number } = req.body;
+  const { email, password,phone } = req.body;
   const user = await userModel.findOne({ email });
 
   if (user) {
@@ -17,7 +17,8 @@ userRouter.post("/signup", async (req, res) => {
         res.send({ msg: "SignupUp faild" });
       } else {
         const new_user = new userModel({
-          phoneNo:number,
+
+          phone:phone,
           email: email,
           password: hash_password,
         });
@@ -31,7 +32,14 @@ userRouter.post("/signup", async (req, res) => {
 userRouter.post("/login", async (req, res) => {
   const { email, password } = req.body;
   const user = await userModel.findOne({ email });
-  const hashed_password = user.password;
+  console.log(user.password,user["password"])
+  
+  
+
+  
+    const hashed_password = user.password;
+  
+  
   const user_id = user._id;
   bcrypt.compare(password, hashed_password, async (err, result) => {
     if (result) {
