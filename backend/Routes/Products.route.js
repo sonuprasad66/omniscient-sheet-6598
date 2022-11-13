@@ -30,7 +30,7 @@ ProductRouter.get("/alldata", async (req, res) => {
     res.send({ data: data, message: "request successfull" });
   } else {
     let data = await ProductModel.find();
-
+    console.log(q);
     res.send({ data: data, message: "request successfull" });
   }
 });

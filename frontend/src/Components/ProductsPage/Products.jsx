@@ -25,9 +25,7 @@ export const Products = () => {
       dispatch(getProducts(getProductsParams));
     }
   }, [location.search]);
-
   // console.log(data);
-
   return (
     <div className="main_container">
       <div className="sidebar">
