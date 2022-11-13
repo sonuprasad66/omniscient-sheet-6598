@@ -10,7 +10,7 @@
     gap: 20px;
     /* border:  1px solid rgb(177, 47, 47); */
     
-    width: 90%;
+    width: 80%;
 margin: auto;
 }
 .productimg{
@@ -30,7 +30,7 @@ margin: auto;
 }
 .producttop img {
     width: 300px;
-    height: 350px;
+    height: 300px;
     
 }
 .bottel{
