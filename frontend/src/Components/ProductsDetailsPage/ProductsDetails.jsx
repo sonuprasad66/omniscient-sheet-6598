@@ -1,41 +1,36 @@
 import React from "react";
 
-import "./propductDel.css"
-import {useParams} from "react-router-dom"
+import "./propductDel.css";
+import { useParams } from "react-router-dom";
 import { getProductsdetails } from "../../Redux/ProductDetails/action";
-import {useDispatch,useSelector} from "react-redux"
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-
-
+import { ImStarEmpty } from "react-icons/im";
+import { addCart } from "../../Redux/Cart/action";
 
 const ProductDetails = () => {
+  const { data } = useSelector((state) => state.DetailsReducer.products);
+  const { id } = useParams();
+  const dispatch = useDispatch();
 
-const dispatch=useDispatch()
+  useEffect(() => {
+    dispatch(getProductsdetails(id));
+  }, [dispatch]);
 
-const {id}=useParams()
+  
 
-useEffect(() => {
-   
-    dispatch(getProductsdetails(id))
-    
-},[getProductsdetails,dispatch,id])
+  // console.log(data);
 
-const {data} =useSelector((state) => state.DetailsReducer.products)
+  // console.log(id)
+  const hendelADDToCart = (id) => {
+    // console.log(id)
+    dispatch(addCart(id))
+  };
 
-console.log(data)
-
-
-// console.log(id)
-const hendelADDToCart=(id) =>{
-
-
-
-}
-
-return(
-  <div id="product">
+  return (
+    <div id="product">
       <div className="productdel">
-        <div className="productimg">
+        {/* <div className="productimg">
           <img
             src="https://onemg.gumlet.io/images/q_auto,h_150,w_150,c_fit,f_auto/qh1au45w8u7cfvf3lg3i/tata-1mg-women-s-multivitamin-zinc-vitamin-c-calcium-vitamin-d-and-iron-immunity-booster-tablet.jpg"
             alt="a"
@@ -60,16 +55,16 @@ return(
             src="https://onemg.gumlet.io/images/q_auto,h_150,w_150,c_fit,f_auto/qh1au45w8u7cfvf3lg3i/tata-1mg-women-s-multivitamin-zinc-vitamin-c-calcium-vitamin-d-and-iron-immunity-booster-tablet.jpg"
             alt="a"
           />
-        </div>
-        <div className="producttop">
-          <img src="https://onemg.gumlet.io/images/q_auto,h_150,w_150,c_fit,f_auto/qh1au45w8u7cfvf3lg3i/tata-1mg-women-s-multivitamin-zinc-vitamin-c-calcium-vitamin-d-and-iron-immunity-booster-tablet.jpg" />
+        </div> */}
 
+        <div className="producttop">
+        
+
+         <img src={data?.imageUrl || "https://onemg.gumlet.io/images/q_auto,h_150,w_150,c_fit,f_auto/qh1au45w8u7cfvf3lg3i/tata-1mg-women-s-multivitamin-zinc-vitamin-c-calcium-vitamin-d-and-iron-immunity-booster-tablet.jpg"}  alt="products_id" />
         </div>
         <div className="productheding">
           <h1>
-            
-            Tata 1mg Women's Multivitamin, Zinc, Vitamin C, Calcium, Vitamin D,
-            and Iron Immunity Booster Tablet
+            {data?.productName || "Tata 1mg Women's Multivitamin, Zinc, Vitamin C, Calcium, Vitamin D, and Iron Immunity Booster Tablet"}
           </h1>
 
           <div
@@ -80,7 +75,7 @@ return(
               color: "#ff6f61",
             }}
           >
-            Tata 1mg Healthcare Solutions Private Limited
+           {data?.brand || "Tata 1mg Healthcare Solutions Private Limited"} 
           </div>
           <div
             className="rating"
@@ -94,7 +89,7 @@ return(
               margin: "10px",
             }}
           >
-            3.5
+             {data?.ratings || "3.5"} 
           </div>
           <p
             style={{
@@ -104,7 +99,7 @@ return(
               color: "#ff6f61",
             }}
           >
-            1023 Ratings & 185 Reviews
+            {data?.numberOfRatings || "1023 Ratings & 185 Reviews"}
           </p>
           <div
             style={{
@@ -127,7 +122,7 @@ return(
                 marginLeft: "40px",
               }}
             >
-              Tata 1mg Healthcare Solutions Private Limited
+              {data?.shortDesc || "Tata 1mg Healthcare Solutions Private Limited"} 
             </p>
           </div>
           <div
@@ -142,9 +137,9 @@ return(
                 gap: "20px",
               }}
             >
-              <div className="bottel">
+              <div className="bottel">  
                 <p>30 teblets</p>
-                <p>₹225</p>
+                <p>{data?.price || "₹225"}</p>
               </div>
               <div className="bottel">
                 <p>30 teblets</p>
@@ -162,21 +157,16 @@ return(
               <li>Helps improve immunity</li>
               <li>Improves digestion and restores gut bacteria</li>
               <li>Improves energy levels and supports brain health </li>
-              <li>
-                A concoction of multi-vitamins, essential minerals, a women
-              </li>
-              <li>centric health blend, and pre and pro-biotics complex</li>
+              
             </ul>
           </div>
         </div>
 
-      
-      <div className="produ">
-      <div className='productcard'>
-      <div
+        <div className="produ">
+          <div className="productcard">
+            <div
               className="div1"
               style={{
-                
                 width: "100%",
                 height: "40px",
                 alignItems: "center",
@@ -197,7 +187,6 @@ return(
                   marginTop: "-10px",
                 }}
               >
-
                 385 people bought this recently
               </p>
             </div>
@@ -206,11 +195,11 @@ return(
                 <input
                   style={{ marginLeft: "15px", height: "20px", width: "20px" }}
                   name="pcheck"
-                  value="88"
+                  value=  {data?.price || "₹500"}
                   type="radio"
                 />
                 &nbsp;&nbsp;
-                <label htmlFor="price">₹ 500</label>
+                <label htmlFor="price">₹ {data?.price || "₹500"}</label>
                 <p
                   style={{
                     color: "#666666",
@@ -221,61 +210,82 @@ return(
                     marginLeft: "110px",
                   }}
                 >
-                  ₹ 999
+                  ₹ {data?.strikedPrice || "999"}
                 </p>
                 <p
                   style={{
                     fontWeight: "400",
                     color: "#42ba4f",
                     fontSize: "18px",
-                    marginTop: "-23px",
-                    marginLeft: "180px",
+                    marginTop: "-25px",
+                    marginLeft: "165px",
                   }}
                 >
-                  50% off
+                  {data?.discount || "50% "}% off
                 </p>
               </div>
 
-
-    <div style={{fontSize:"20px",margin: "20px"}}>
-      <input  style={{ marginLeft: "15px", height: "20px", width: "20px" }}
-        name="pcheck"  value="88" type="radio"/>&nbsp;&nbsp;
-       <label htmlFor="price">₹ 700 
-       
-        </label>
-        <img style={{ fontWeight:"500",color:"#42ba4f",fontSize:"16px",marginTop:"-25px",marginLeft:"100px"}}
-        src="https://res.cloudinary.com/du8msdgbj/image/upload/v1613645053/marketing/phb2bz61etrdmuurfdoq.png" alt="" />
-        <p style={{ fontWeight:"400",fontSize:"14px",marginTop:"-25px",marginLeft:"180px"}} >
-        member price
-free shipping and 5% Extra cashback
-        </p>
-      </div>
-      <div  style={{margin:"20px",fontSize:"15px"}}>
-        <label>Inclusive of all taxes</label>
-        <br/>
-        <select>
-                 <option value="1">1 Bottel</option>
-                <option value="2">2 Bottels</option>
-                <option value="3">3 Bottels</option>
-                <option value="4">4 Bottels</option>
-                <option value="5">5 Bottels</option>
-                <option value="6">6 Bottels</option>
-                <option value="7">7 Bottels</option>
-                <option value="8">8 Bottels</option>
-                <option value="9">9 Bottels</option>
-                <option value="10">10 Bottels</option>
-                
-              
-        </select>&nbsp;&nbsp;  of 60 bottels
-      </div>
-      <div className="btn">
-        <button className="btn1" type="submit" onClick={() => hendelADDToCart(id)}>ADD TO CART</button>
-      </div>
-      </form>
-      </div>
-      <div className="dates1">
+              <div style={{ fontSize: "20px", margin: "20px" }}>
+                <input
+                  style={{ marginLeft: "15px", height: "20px", width: "20px" }}
+                  name="pcheck"
+                  value="500"
+                  type="radio"
+                />
+                &nbsp;&nbsp;
+                <label htmlFor="price">₹ 700</label>
+                <img
+                  style={{
+                    fontWeight: "500",
+                    color: "#42ba4f",
+                    fontSize: "16px",
+                    marginTop: "-25px",
+                    marginLeft: "100px",
+                  }}
+                  src="https://res.cloudinary.com/du8msdgbj/image/upload/v1613645053/marketing/phb2bz61etrdmuurfdoq.png"
+                  alt=""
+                />
+                <p
+                  style={{
+                    fontWeight: "400",
+                    fontSize: "14px",
+                    marginTop: "-25px",
+                    marginLeft: "180px",
+                  }}
+                >
+                  member price free shipping and 5% Extra cashback
+                </p>
+              </div>
+              <div style={{ margin: "20px", fontSize: "15px" }}>
+                <label>Inclusive of all taxes</label>
+                <br />
+                <select>
+                  <option value="1">1 Bottel</option>
+                  <option value="2">2 Bottels</option>
+                  <option value="3">3 Bottels</option>
+                  <option value="4">4 Bottels</option>
+                  <option value="5">5 Bottels</option>
+                  <option value="6">6 Bottels</option>
+                  <option value="7">7 Bottels</option>
+                  <option value="8">8 Bottels</option>
+                  <option value="9">9 Bottels</option>
+                  <option value="10">10 Bottels</option>
+                </select>
+                &nbsp;&nbsp; of 60 bottels
+              </div>
+              <div className="btn">
+                <button
+                  className="btn1"
+                  type="submit"
+                  onClick={() => hendelADDToCart(id)}
+                >
+                  ADD TO CART
+                </button>
+              </div>
+            </form>
+          </div>
+          <div className="dates1">
             <p>
-              
               <span>Earliest delivery by</span>{" "}
               <span className="contain"> 5pm, Tomorrow</span>{" "}
             </p>
@@ -283,7 +293,7 @@ free shipping and 5% Extra cashback
               Delivering to: <span> 110020, New Delhi </span>
             </p>
           </div>
-        
+
           <div style={{ marginTop: "20px" }}>
             <img
               style={{ width: "500px" }}
@@ -300,16 +310,10 @@ free shipping and 5% Extra cashback
               30th November 2022.
             </p>
           </div>
-
-        
+        </div>
+      </div>
     </div>
-    </div>
-    </div>
-)
-
-}
-    
-  
-
+  );
+};
 
 export default ProductDetails;

@@ -4,7 +4,8 @@ const ProductDetailsRouter = Router();
 
 ProductDetailsRouter.get("/details/:id", async (req, res) => {
   const { id } = req.params;
-  let data = await ProductModel.findOne({ id });
+  let data = await ProductModel.findById({ _id:id });
+  console.log(data)
   res.send({ data: data, message: "request successfull" });
 });
 

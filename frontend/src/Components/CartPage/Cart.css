@@ -47,6 +47,7 @@
 .coupon-div,
 .health-div,
 .payment-div,
+.left-payment,
 .checkout,
 .neocoins {
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
@@ -97,7 +98,8 @@
   font-size: 14px;
   color: #2b2b2b;
 }
-.apply-coupon:hover {
+.apply-coupon:hover,
+.pay-left > div {
   cursor: pointer;
 }
 .health-child {
@@ -281,4 +283,30 @@
 }
 .fw-700 {
   font-weight: 700;
+}
+.left-payment {
+  width: 40rem;
+  display: flex;
+  justify-content: space-between;
+}
+.pay-left {
+  width: 40%;
+  padding: 1rem 0.5rem;
+  background-color: rgb(241, 217, 207);
+}
+.pay-left > div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.pay-left > div > img {
+  margin-right: 20px;
+}
+.pay-left > div > p {
+  font-size: 18px;
+}
+.pay-right {
+  width: 60%;
+  padding: 1rem 0.5rem;
 }

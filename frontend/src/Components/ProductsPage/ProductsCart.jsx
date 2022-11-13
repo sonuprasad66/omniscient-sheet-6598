@@ -5,6 +5,7 @@ import { ImStarEmpty } from "react-icons/im";
 import { FaCartPlus } from "react-icons/fa";
 import { addCart } from "../../Redux/Cart/action";
 import { useDispatch } from "react-redux";
+import { getProductsdetails } from "../../Redux/ProductDetails/action";
 
 export const ProductsCart = ({ product }) => {
   const dispatch = useDispatch();
@@ -14,7 +15,7 @@ export const ProductsCart = ({ product }) => {
   };
 
   const handleDetails = (id) => {
-    console.log(id);
+    dispatch(getProductsdetails(id));
   };
 
   return (
