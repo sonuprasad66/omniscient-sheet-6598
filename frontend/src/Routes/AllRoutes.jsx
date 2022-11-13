@@ -5,7 +5,6 @@ import { Cart } from "../Components/CartPage/Cart";
 import { Payment } from "../Components/CartPage/Payment";
 import { Summary } from "../Components/CartPage/Summarypage";
 import Home from "../Components/HomePage/Home";
-import { Login } from "../Components/LoginSignupPage/Login";
 import { Signup } from "../Components/LoginSignupPage/Signup";
 import ProductDetails from "../Components/ProductsDetailsPage/ProductsDetails";
 import { Products } from "../Components/ProductsPage/Products";
@@ -15,7 +14,6 @@ export const AllRoutes = () => {
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
-
         <Route path="/signup" element={<Signup />} />
         <Route path="/products" element={<Products />} />
         <Route path="/products/:id" element={<ProductDetails />} />

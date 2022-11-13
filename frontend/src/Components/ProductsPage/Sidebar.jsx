@@ -159,8 +159,8 @@ export const Sidebar = () => {
           <Flex>
             <input
               type="checkbox"
-              value="none"
-              checked={discount.includes("none")}
+              value="0"
+              checked={discount.includes("0")}
               onChange={handleDiscountCheckbox}
             />
             <label>Reset Filter</label>

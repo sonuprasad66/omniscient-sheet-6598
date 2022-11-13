@@ -65,6 +65,9 @@ margin: auto;
     font-size: 15px;
     margin-left: 25px;
 }
+.produ{
+    margin-top: 20px;
+}
 .productcard{
     /* border: 1px solid rgb(36, 21, 145); */
     /* width: 500px; */
@@ -75,7 +78,10 @@ margin: auto;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 5%;
     margin-bottom: 20px;
+    /* padding-top: 5px; */
+    padding-bottom: 10px;
 }
+
 .images img{
     margin: 20px;
     height: 170px;
@@ -84,6 +90,7 @@ margin: auto;
 }
 .dates1{
     /* height: 120px; */
+    
     font-size: 15px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 20px;
@@ -96,6 +103,7 @@ margin: auto;
     margin-top: 20px;
 }
 .offer{
+    /* width: 500px; */
     font-size: 15px;
     margin-top: 20px;
     height: 120px;
@@ -117,6 +125,7 @@ margin: auto;
     font-weight: bold;
     color: white;
     
+    
 }
 .tbn::after{
     cursor: pointer;
@@ -130,7 +139,12 @@ margin: auto;
     background-color: #edf9ee;
 }
 .rating{
-    color: #1aab2a;
+    background-color: #1aab2a;
+    color: white;
+    height: 30px;
+    width: 60px;
+    /* border: 1px solid black; */
+    margin-left: 20px;
 }
 span{
     font-weight: bold;
