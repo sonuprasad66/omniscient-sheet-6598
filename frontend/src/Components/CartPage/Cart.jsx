@@ -12,18 +12,21 @@ export const Cart = () => {
 
   useEffect(() => {
     dispatch(getCarts());
-  }, []);
+  }, [dispatch]);
 
-  const totalPrice = data?.reduce(
-    (acc, item) => acc + Number(item.strikedPrice * item.quantity),
-    0
-  );
+  const totalPrice =
+    data?.reduce(
+      (acc, item) => acc + Number(item.strikedPrice * item.quantity),
+      0
+    ) || 0;
 
-  const discountPrice = data?.reduce(
-    (acc, item) =>
-      acc + Number([(item.discount / 100) * item.strikedPrice] * item.quantity),
-    0
-  );
+  const discountPrice =
+    data?.reduce(
+      (acc, item) =>
+        acc +
+        Number([(item.discount / 100) * item.strikedPrice] * item.quantity),
+      0
+    ) || 0;
 
   const handleChange = (id, change) => {
     let temp = data.filter((item) => (item._id === id ? item : null));
