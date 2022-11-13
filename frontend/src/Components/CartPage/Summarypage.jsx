@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getCarts } from "../../Redux/Cart/action";
@@ -10,25 +9,26 @@ export const Summary = () => {
   // const address = useSelector((state) => state.CartReducer.address);
   const { data } = useSelector((state) => state.CartReducer.carts);
   const dispatch = useDispatch();
-  let date = new Date().toISOString().split("T")[0] ;
+  let date = new Date().toISOString().split("T")[0];
   // console.log(address);
 
   useEffect(() => {
     dispatch(getCarts());
-  }, []);
+  }, [dispatch]);
 
-  const totalPrice = data?.reduce(
-    (acc, item) => acc + Number(item.strikedPrice * item.quantity),
-    0
-  );
+  const totalPrice =
+    data?.reduce(
+      (acc, item) => acc + Number(item.strikedPrice * item.quantity),
+      0
+    ) || 0;
 
-  const discountPrice = data?.reduce(
-    (acc, item) =>
-      acc + Number([(item.discount / 100) * item.strikedPrice] * item.quantity),
-    0
-  );
-
-  const handleChange = (change) => {};
+  const discountPrice =
+    data?.reduce(
+      (acc, item) =>
+        acc +
+        Number([(item.discount / 100) * item.strikedPrice] * item.quantity),
+      0
+    ) || 0;
 
   return (
     <div>
@@ -42,13 +42,7 @@ export const Summary = () => {
           </div>
           <div>
             {data?.map((item) => {
-              return (
-                <SummaryItem
-                  key={item._id}
-                  {...item}
-                  handleChange={handleChange}
-                />
-              );
+              return <SummaryItem key={item._id} {...item} />;
             })}
           </div>
           <hr />
@@ -116,7 +110,9 @@ export const Summary = () => {
             </div>
           </div>
           <div className="checkout">
-            <button>PROCEED TO PAYMENT</button>
+            <Link to={"/payment"}>
+              <button>PROCEED TO PAYMENT</button>
+            </Link>
           </div>
         </div>
       </div>
