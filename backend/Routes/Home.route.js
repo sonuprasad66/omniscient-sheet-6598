@@ -14,8 +14,8 @@ HomePageRouter.get("/homealldata", async (req, res) => {
   });
   HomePageRouter.get("/homealldata/:id", async (req, res) => {
     const { id } = req.params;
-    let data = await ProductModel.findById({ id });
-    res.send({ data: data, message: "request successfull" });
+    let data = await ProductModel.findById({ _id:id });
+    res.send({ data: data, message: "request successfull" })
   });
 
   module.exports={

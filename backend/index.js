@@ -19,13 +19,13 @@ app.get("/", (req, res) => {
 app.use("/", userRouter);
 app.use("/", ProductRouter);
 app.use("/",HomePageRouter);
-app.use("/cart", cartRouter);
+app.use("/cart", cartRouter)
 app.use("/", ProductDetailsRouter);
 
 
 app.listen(PORT, async () => {
   try {
-    await connection;
+    await connection
     console.log("DB connected successfull");
   } catch (err) {
     console.log("Error on DB connecting");

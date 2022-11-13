@@ -4,6 +4,9 @@ import { Box, Heading, Image } from '@chakra-ui/react'
 import { Swiper, SwiperSlide
 
 } from 'swiper/react';
+import { useDispatch } from 'react-redux';
+import { getProductsdetails } from '../../Redux/ProductDetails/action';
+import { useNavigate } from 'react-router-dom';
 import {
   Accordion,
   AccordionItem,
@@ -24,19 +27,15 @@ import { Text } from '@chakra-ui/react'
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { Link, useSearchParams } from "react-router-dom";
-  // function Feature({ title, desc, ...rest }) {
-  //   return (
-  //     <Box p={5} shadow='md' borderWidth='1px' {...rest}>
-  //       <Heading fontSize='xl'>{title}</Heading>
-  //       <Text mt={4}>{desc}</Text>
-  //     </Box>
-  //   )
+  
+  
   // }
 const Home = () => {
   const [tata_1mg,setata_1mg]=useState([]);
   const [mom ,setmom] = useState([]);
+  const navigate = useNavigate();
+  const dispatch = useDispatch()
   useEffect(()=>{
-    
     const fetchdata = async () =>{
       const data = await fetch(`http://localhost:8080/homealldata/?brand=Other`);
       const rson = await data.json();
@@ -49,13 +48,17 @@ const Home = () => {
     },5000)
       fetchdata().catch(console.error);;
     //setata_1mg(...result.data);
-    
        fetch(`http://localhost:8080/homealldata/?brand=Tata 1mg`).then((res)=>res.json()).then((res)=>{
         setmom(res.data);
         console.log(mom);
        });
     
   },[])
+  const handleDetails = (id) => {
+    
+    dispatch(getProductsdetails(id));
+    navigate("/products/:id");
+  };
   return (
     <div>
         <div className='top_Ad_section'>
@@ -297,7 +300,7 @@ const Home = () => {
       
       {tata_1mg && tata_1mg.slice(0,10).map((elem)=>(
         
-         <SwiperSlide className='swiper-slide-3'>
+         <SwiperSlide className='swiper-slide-3' onClick={()=>handleDetails(elem._id)}>
           <Link to={`/products/${elem._id}`}>
          <Image src={elem.imageUrl}></Image>
          <div className='Healthvit_heading'>
@@ -361,7 +364,7 @@ const Home = () => {
       className="swiper-ads"
     > 
      {tata_1mg && tata_1mg.slice(11,22).map((elem)=>(
-         <SwiperSlide className='swiper-slide-3'>
+         <SwiperSlide className='swiper-slide-3' onClick={()=>handleDetails(elem._id)}>
            <Link to={`/products/${elem._id}`}>
          <Image src={elem.imageUrl}></Image>
          <div className='Healthvit_heading'>
@@ -499,7 +502,7 @@ const Home = () => {
     >
       
       {mom && mom.slice(20,32).map((elem)=>(
-         <SwiperSlide className='swiper-slide-3'>
+         <SwiperSlide className='swiper-slide-3' onClick={()=>handleDetails(elem._id)}>
           <Link to={`/products/${elem._id}`}>
          <Image src = {elem.imageUrl}></Image>
          <div className='Healthvit_heading'>
