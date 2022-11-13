@@ -18,7 +18,7 @@ export const ProductsCart = ({ product }) => {
 
   const handleDetails = (id) => {
     dispatch(getProductsdetails(id));
-    navigate(`products/${id}`);
+    navigate(`/products/${id}`);
   };
 
   return (

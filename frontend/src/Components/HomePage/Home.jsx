@@ -1,3 +1,4 @@
+import { Swiper, SwiperSlide
 import React from "react";
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
 import { Box, Heading, Image } from "@chakra-ui/react";
@@ -35,7 +36,7 @@ const Home = () => {
   useEffect(() => {
     const fetchdata = async () => {
       const data = await fetch(
-        `http://localhost:8080/homealldata/?brand=Other`
+        `https://tata-1mg.onrender.com/homealldata/?brand=Other`
       );
       const rson = await data.json();
       //console.log(rson);
@@ -47,7 +48,7 @@ const Home = () => {
     }, 5000);
     fetchdata().catch(console.error);
     //setata_1mg(...result.data);
-    fetch(`http://localhost:8080/homealldata/?brand=Tata 1mg`)
+    fetch(`https://tata-1mg.onrender.com/homealldata/?brand=Tata 1mg`)
       .then((res) => res.json())
       .then((res) => {
         setmom(res.data);
