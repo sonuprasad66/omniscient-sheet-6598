@@ -4,7 +4,7 @@ import * as types from "./actionTypes";
 export const getCarts = () => (dispatch) => {
   dispatch({ type: types.GET_CART_REQUEST });
   return axios
-    .get(`http://localhost:8080/cart`)
+    .get(`https://tata-1mg.onrender.com/cart`)
     .then((res) => {
       return dispatch({ type: types.GET_CART_SUCCESS, payload: res.data });
     })
@@ -16,7 +16,7 @@ export const getCarts = () => (dispatch) => {
 export const updateCart = (id, payload) => (dispatch) => {
   dispatch({ type: types.UPDATE_CART_REQUEST });
   return axios
-    .patch(`http://localhost:8080/cart/update/${id}`, payload)
+    .patch(`https://tata-1mg.onrender.com/cart/update/${id}`, payload)
     .then((res) => {
       return dispatch({ type: types.UPDATE_CART_SUCCESS });
     })
@@ -28,7 +28,7 @@ export const updateCart = (id, payload) => (dispatch) => {
 export const deleteCart = (id) => (dispatch) => {
   dispatch({ type: types.DELETE_CART_REQUEST });
   return axios
-    .delete(`http://localhost:8080/cart/delete/${id}`)
+    .delete(`https://tata-1mg.onrender.com/cart/delete/${id}`)
     .then((res) => {
       return dispatch({ type: types.DELETE_CART_SUCCESS });
     })
@@ -44,7 +44,7 @@ export const addAddress = (payload) => (dispatch) => {
 export const addCart = (id) => (dispatch) => {
   dispatch({ type: types.ADD_CART_REQUEST });
   return axios
-    .post(`http://localhost:8080/cart/add`, {
+    .post(`https://tata-1mg.onrender.com/cart/add`, {
       id,
     })
     .then((res) => {
