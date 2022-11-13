@@ -3,25 +3,19 @@ const { ProductModel } = require("../Models/Products.model");
 const ProductRouter = Router();
 
 // ProductRouter.get("/alldata", async (req, res) => {
-//   let { brand } = req.query;
-//   console.log("bbbb", brand);
+//   const { brand, discount } = req.query;
 
-//   if (brand && brand !== undefined) {
-//     let bag = [];
-//     brand.map(async (item) => {
-//       let data = await ProductModel.find({ brand: item });
-//       bag = [...bag, data];
-//     });
-//     res.send({ data: bag, message: "request successfull" });
+//   if (brand) {
+//     let data = await ProductModel.find({ brand: { $in: [...brand] } });
+//     res.send({ data: data, message: "request successfull" });
 //   } else {
-//     let data = await ProductModel.find({});
+//     let data = await ProductModel.find();
 //     res.send({ data: data, message: "request successfull" });
 //   }
 // });
 
-// db.info.find( { contribs: { $in: [ "ALGOL", "Lisp" ]} } ).pretty()
-
 ProductRouter.get("/alldata", async (req, res) => {
+
   let q = req.query;
   const arr = q.brand;
   if (arr) {
@@ -35,9 +29,28 @@ ProductRouter.get("/alldata", async (req, res) => {
   }
 });
 
-ProductRouter.get("/alldata/:id", async (req, res) => {
-  const { id } = req.params;
-  let data = await ProductModel.findOne({ id });
+  const { brand, discount } = req.query;
+  let data;
+
+  // console.log(discount);
+
+
+  if (brand && discount) {
+    data = await ProductModel.find({
+      brand: { $in: brand },
+      discount: { $gt: discount[0] },
+    });
+  } else if (brand) {
+    data = await ProductModel.find({
+      brand: { $in: brand },
+    });
+  } else if (discount) {
+    data = await ProductModel.find({
+      discount: { $gt: discount[0] },
+    });
+  } else {
+    data = await ProductModel.find();
+  }
   res.send({ data: data, message: "request successfull" });
 });
 

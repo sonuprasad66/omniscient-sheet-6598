@@ -3,12 +3,24 @@ import React from "react";
 import "./Products.css";
 import { ImStarEmpty } from "react-icons/im";
 import { FaCartPlus } from "react-icons/fa";
+import { addCart } from "../../Redux/Cart/action";
+import { useDispatch } from "react-redux";
+import { getProductsdetails } from "../../Redux/ProductDetails/action";
 
 export const ProductsCart = ({ product }) => {
-  // console.log(product);
+  const dispatch = useDispatch();
+
+  const handleAddToCart = (id) => {
+    dispatch(addCart(id));
+  };
+
+  const handleDetails = (id) => {
+    dispatch(getProductsdetails(id));
+  };
+
   return (
     <div className="productCart_container">
-      <div className="product_image">
+      <div className="product_image" onClick={() => handleDetails(product._id)}>
         <img src={product.imageUrl} alt="product" />
       </div>
 
@@ -80,7 +92,12 @@ export const ProductsCart = ({ product }) => {
             }}
           >
             <h2>₹{product.price}</h2>
-            <Flex gap={1} alignItems="center" className="add_btn">
+            <Flex
+              gap={1}
+              alignItems="center"
+              className="add_btn"
+              onClick={() => handleAddToCart(product._id)}
+            >
               <FaCartPlus />
               ADD
             </Flex>

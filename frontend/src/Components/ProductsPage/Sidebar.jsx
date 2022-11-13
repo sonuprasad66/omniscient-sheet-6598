@@ -2,12 +2,16 @@ import { Flex } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import "./Products.css"
+import "./Products.css";
 
 export const Sidebar = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const initialComponentsFilter = searchParams.getAll("brand");
   const [brand, setBrand] = useState(initialComponentsFilter || []);
+
+  const initialComponentsDiscount = searchParams.getAll("discount");
+  const [discount, setDiscount] = useState(initialComponentsDiscount || []);
+
   const handleFilterCheckbox = (e) => {
     const newCategory = [...brand];
     if (newCategory.includes(e.target.value)) {
@@ -19,13 +23,24 @@ export const Sidebar = () => {
   };
   // console.log(category);
 
+  const handleDiscountCheckbox = (e) => {
+    const newCategory = [...discount];
+    if (newCategory.includes(e.target.value)) {
+      newCategory.splice(newCategory.indexOf(e.target.value), 1);
+    } else {
+      newCategory.push(e.target.value);
+    }
+    setDiscount(newCategory);
+  };
+
   useEffect(() => {
-    if (brand) {
+    if (brand || discount) {
       let params = {};
       brand && (params.brand = brand);
+      discount && (params.discount = discount);
       setSearchParams(params);
     }
-  }, [brand, setSearchParams]);
+  }, [brand, discount, setSearchParams]);
 
   return (
     <div className="sidebar_container">
@@ -142,27 +157,47 @@ export const Sidebar = () => {
         </div>
         <div>
           <Flex>
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              value="0"
+              checked={discount.includes("0")}
+              onChange={handleDiscountCheckbox}
+            />
             <label>Reset Filter</label>
           </Flex>
         </div>
         <Flex justifyContent={"space-between"}>
           <div>
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              value="10"
+              checked={discount.includes("10")}
+              onChange={handleDiscountCheckbox}
+            />
             <label>10% and above</label>
           </div>
           <h4>67</h4>
         </Flex>
         <Flex justifyContent={"space-between"}>
           <div>
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              value="20"
+              checked={discount.includes("20")}
+              onChange={handleDiscountCheckbox}
+            />
             <label>20% and above</label>
           </div>
           <h4>36</h4>
         </Flex>
         <Flex justifyContent={"space-between"}>
           <div>
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              value="30"
+              checked={discount.includes("30")}
+              onChange={handleDiscountCheckbox}
+            />
             <label>30% and above</label>
           </div>
           <h4>9</h4>
