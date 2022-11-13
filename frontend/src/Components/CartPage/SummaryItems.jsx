@@ -5,12 +5,9 @@ export const SummaryItem = ({
   price,
   strikedPrice,
   quantity,
-  handleChange,
 }) => {
-  const handleSubmit = (change) => {};
-
   return (
-    <div className="Item-conatiner summaryItem" >
+    <div className="Item-conatiner summaryItem">
       <img
         src="https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/vsgjzvzkp3q8zlr2udm0.png"
         alt="icon"

@@ -33,9 +33,11 @@ export const Login = ({toggle,settoggle}) => {
   let funn=async()=>{
     alert("start")
     let value={
+
       
-      phoneNo:info,
-      password
+      email:info,
+      password:password
+
     }
     console.log(value)
     axios.post("http://localhost:8080/login",value).then((val)=>{console.log(val);alert("Login Successfull")}).catch((e)=>console.log(e))
@@ -96,7 +98,7 @@ export const Login = ({toggle,settoggle}) => {
               <label className="otpch" >Get password on Call</label>
               </div>
             <div className="innertwo">
-              <a className="button-text" onClick={funn} ><span >DONE</span></a>
+              <a className="button-text" onClick={()=>{funn();settoggle(false)}} ><span >DONE</span></a>
               <div className="style__bottom-content___FTTVN"><div className="style__fh-40___C40iw"><span className="style__text___3XOlZ style__text-larger___2DsZQ style__d-f___25FFn"></span><div className="style__text___3XOlZ style__text-lighter___2G_Vn style__text-small___2Rh34 style__tnc-wrapper___3iYER"><div ><a href="/tnc"></a>  <a href="/privacypolicy"></a></div></div></div><div className="style__bottom-content___FTTVN"><div className="style__fh-20___1-IuS"></div><div className="style__link___rBZIG style__tnc-wrapper___3iYER"><span>Need Help? Get In Touch</span></div></div></div>
             </div>
             
