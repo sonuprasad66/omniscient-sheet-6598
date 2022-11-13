@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Products.css";
 import { Sidebar } from "./Sidebar";
 import { useDispatch, useSelector } from "react-redux";
@@ -14,6 +14,7 @@ export const Products = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const { data } = useSelector((state) => state.ProductReducer.products);
+  const [sortData, setSortData] = useState(data);
 
   useEffect(() => {
     if (location || data.length === 0) {
@@ -27,6 +28,41 @@ export const Products = () => {
       dispatch(getProducts(getProductsParams));
     }
   }, [location.search]);
+
+  let arr;
+  const handelSelect = (e) => {
+    if (e === "rel") {
+      setSortData(data);
+    } else if (e === "plth") {
+      arr = data.sort((a, b) => {
+        if (a.price > b.price) return +1;
+        return -1;
+      });
+      setSortData(arr);
+    } else if (e === "phtl") {
+      arr = data.sort((a, b) => {
+        if (a.price > b.price) return -1;
+        return +1;
+      });
+      setSortData(arr);
+    } else if (e === "rlth") {
+      arr = data.sort((a, b) => {
+        if (a.ratings > b.ratings) return +1;
+        return -1;
+      });
+      setSortData(arr);
+    } else if (e === "rhtl") {
+      arr = data.sort((a, b) => {
+        if (a.ratings > b.ratings) return -1;
+        return +1;
+      });
+      setSortData(arr);
+    }
+  };
+
+  // useEffect(() => {
+  //   handelSelect();
+  // }, [arr]);
 
   // console.log(data);
 
@@ -46,6 +82,7 @@ export const Products = () => {
                 <Flex gap={2}>
                   <h2 style={{ fontWeight: "700" }}>Sort By</h2>
                   <select
+                    onChange={(e) => handelSelect(e.target.value)}
                     style={{ border: "1px solid grey", fontWeight: "600" }}
                   >
                     <option value="rel">Relevance</option>
@@ -59,7 +96,7 @@ export const Products = () => {
             </Flex>
           </div>
           <SimpleGrid columns={[1, 2, 3, 4]} spacing="20px">
-            {data?.map((item) => {
+            {sortData?.map((item) => {
               return <ProductsCart key={item._id} product={item} />;
             })}
           </SimpleGrid>
