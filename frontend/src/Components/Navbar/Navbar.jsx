@@ -3,6 +3,7 @@ import { SlLocationPin } from "react-icons/sl";
 import { GrCart } from "react-icons/gr";
 import { BiSearch } from "react-icons/bi";
 import { IconContext } from "react-icons";
+import {Input,Button,Heading} from "@chakra-ui/react"
 import "./Navbar.css";
 const Navbar = () => {
   return (
