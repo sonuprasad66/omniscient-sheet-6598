@@ -29,42 +29,38 @@ export const Products = () => {
     }
   }, [location.search]);
 
-  let arr;
-  const handelSelect = (e) => {
-    if (e === "rel") {
-      setSortData(data);
-    } else if (e === "plth") {
-      arr = data.sort((a, b) => {
-        if (a.price > b.price) return +1;
-        return -1;
-      });
-      setSortData(arr);
-    } else if (e === "phtl") {
-      arr = data.sort((a, b) => {
-        if (a.price > b.price) return -1;
-        return +1;
-      });
-      setSortData(arr);
-    } else if (e === "rlth") {
-      arr = data.sort((a, b) => {
-        if (a.ratings > b.ratings) return +1;
-        return -1;
-      });
-      setSortData(arr);
-    } else if (e === "rhtl") {
-      arr = data.sort((a, b) => {
-        if (a.ratings > b.ratings) return -1;
-        return +1;
-      });
-      setSortData(arr);
-    }
-  };
+  const handelSelect = () => {};
 
-  // useEffect(() => {
-  //   handelSelect();
-  // }, [arr]);
-
-  // console.log(data);
+  // let arr;
+  // const handelSelect = (e) => {
+  //   if (e === "rel") {
+  //     setSortData(data);
+  //   } else if (e === "plth") {
+  //     arr = data.sort((a, b) => {
+  //       if (a.price > b.price) return +1;
+  //       return -1;
+  //     });
+  //     setSortData(arr);
+  //   } else if (e === "phtl") {
+  //     arr = data.sort((a, b) => {
+  //       if (a.price > b.price) return -1;
+  //       return +1;
+  //     });
+  //     setSortData(arr);
+  //   } else if (e === "rlth") {
+  //     arr = data.sort((a, b) => {
+  //       if (a.ratings > b.ratings) return +1;
+  //       return -1;
+  //     });
+  //     setSortData(arr);
+  //   } else if (e === "rhtl") {
+  //     arr = data.sort((a, b) => {
+  //       if (a.ratings > b.ratings) return -1;
+  //       return +1;
+  //     });
+  //     setSortData(arr);
+  //   }
+  // };
 
   return (
     <>
