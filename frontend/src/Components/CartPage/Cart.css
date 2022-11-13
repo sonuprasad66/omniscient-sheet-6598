@@ -32,7 +32,7 @@
   margin-top: 3rem;
 }
 .right-item-container {
-  width: 10%;
+  width: 13%;
 }
 .Item-conatiner h6 {
   font-weight: bold;
@@ -211,7 +211,7 @@
   color: #f55748;
   font-weight: 700;
 }
-.checkout > button {
+.checkout button {
   background-color: #f5584a;
   width: 100%;
   height: 3rem;
@@ -228,52 +228,57 @@
 .remove-div > img {
   margin-right: 8px;
 }
-.remove-div > p,
-.quantity-div > p {
+.remove-div > p {
   font-size: 12px;
+}
+.quantity-div p {
+  font-size: 14px;
 }
 .quantity-div {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   gap: 4px;
+  width: 5rem;
 }
-.quantity-div > img:hover {
+.quantity-div img:hover,
+.remove-div:hover {
   cursor: pointer;
 }
-.summaryItem{
+.summaryItem {
   margin-bottom: 1.5rem;
   color: black;
 }
-.summ-arrive{
+.summ-arrive {
   background-color: #fef7fe;
   padding: 10px;
   display: flex;
   justify-content: space-between;
 }
-.summ-arrive>h6{
+.summ-arrive > h6 {
   font-size: 14px;
   color: #333333;
   font-weight: 700;
 }
-.summ-arrive>p{
+.summ-arrive > p {
   font-size: 12px;
   color: #a9a9a9;
 }
-.address-change{
+.address-change {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
 }
-.address-change>p{
+.address-change > p {
   color: #ff6f61;
   font-weight: 700;
 }
-.add-div>h5, .add-div>h6{
+.add-div > h5,
+.add-div > h6 {
   font-size: 12px;
   color: #333333;
 }
-.fw-700{
+.fw-700 {
   font-weight: 700;
 }

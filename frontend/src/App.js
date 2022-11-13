@@ -7,8 +7,9 @@ import { AllRoutes } from "./Routes/AllRoutes";
 function App() {
   return (
     <div>
-      {/* <Navbar /> */}
-      <Newnavbar/>
+
+      <Navbar />
+
       <AllRoutes />
       <Footer />
     </div>
