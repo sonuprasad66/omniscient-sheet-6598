@@ -5,7 +5,7 @@ export const getProducts = (params) => (dispatch) => {
   // console.log("action", params);
   dispatch({ type: types.GET_PRODUCTS_REQUEST });
   return axios
-    .get(`http://localhost:8080/alldata`, params)
+    .get(`https://tata1mgbd-production.up.railway.app/alldata`, params)
     .then((res) => {
       // console.log(res.data);
       return dispatch({ type: types.GET_PRODUCTS_SUCCESS, payload: res.data });
