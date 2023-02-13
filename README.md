@@ -58,13 +58,6 @@
 ## Glimpses of Tata 1mg Clone 🙈 :
 
 
-
-
-
-
-
-
-
 <table>
 
 
@@ -108,19 +101,19 @@ This project was built using React v 18.0.5, Redux v 4.1.2, Chakra UI, CSS and R
 ### Setup
 
 
-The project repository can be found in [GitHub link](https://github.com/sonuprasad66/tense-visitor-349) or just clone the project using this command. 
+The project repository can be found in [GitHub link](https://github.com/sonuprasad66/omniscient-sheet-6598) or just clone the project using this command. 
 
 
 ```
 Using HTTPS
 
-# git clone https://github.com/sonuprasad66/tense-visitor-349.git
+# git clone https://github.com/sonuprasad66/omniscient-sheet-6598.git
 ```
 
 + Open terminal on your workspace with
 
 ```
-cd /urban_company
+cd /omniscient-sheet-6598
 ```
 
 
